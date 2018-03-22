@@ -4,7 +4,7 @@
 
 ## User Stories
 
-The following **required** functionality is completed:
+The following **1** functionality is completed:
 
 - [ ] User can post an interview request
 - [ ] User can comment on other user's post
