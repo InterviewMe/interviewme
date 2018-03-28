@@ -10,7 +10,7 @@ The following **1** functionality is completed:
 - [ ] User can comment on other user's post
 - [ ] User can customize a profile
 - [ ] User can access Settings screenaccess
-- [ ] User can login/signup for account
+- [x] User can login/signup for account
 
 The following **stretch** features are implemented:
 
