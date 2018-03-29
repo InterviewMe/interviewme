@@ -31,29 +31,25 @@ class SignUpViewController: UIViewController {
     }
 
     @IBAction func signUpButton(_ sender: Any) {
-        // initialize a user object
-        let newUser = PFUser()
-        
+
         // set user properties
-        newUser.username = emailTextField.text
-        newUser.email = emailTextField.text
-        newUser.password = passwordTextField.text
-        
+        let newUserAccount = UserAccount()
+        newUserAccount.first_name = self.firstNameTextField.text!
+        newUserAccount.last_name = self.lastNameTextField.text!
+        newUserAccount.username = self.emailTextField.text!
+        newUserAccount.email = self.emailTextField.text!
+        newUserAccount.biography = ""
+        newUserAccount.password = passwordTextField.text
+ 
         // sign up function for PFUser
-        newUser.signUpInBackground { (success: Bool, error: Error?) in
+        newUserAccount.signUpInBackground { (success: Bool, error: Error?) in
             if let error = error {
                 print(error)
             } else {
-                // create user account object
-                let newUserAccount = UserAccount()
-                newUserAccount.first_name = self.firstNameTextField.text!
-                newUserAccount.last_name = self.lastNameTextField.text!
-                newUserAccount.user = newUser
-                newUserAccount.biography = ""
-                newUserAccount.saveInBackground()
                 self.dismiss(animated: true, completion: nil)
             }
         }
+        
         
     }
     

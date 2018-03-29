@@ -28,7 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             configuration.server = "http://codepath-interviewme.herokuapp.com/parse"
         })
     )
-    if PFUser.current() != nil {
+    if UserAccount.current() != nil {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         // view controller currently being set in Storyboard as default will be overridden
         let HomeViewController = storyboard.instantiateViewController(withIdentifier: "HomeViewController")

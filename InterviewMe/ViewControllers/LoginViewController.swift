@@ -28,7 +28,7 @@ class LoginViewController: UIViewController {
         let username = usernameTextField.text ?? ""
         let password = passwordTextField.text ?? ""
         
-        PFUser.logInWithUsername(inBackground: username, password: password) { (user: PFUser?, error: Error?) in
+        UserAccount.logInWithUsername(inBackground: username, password: password) { (user: PFUser?, error: Error?) in
             if let error = error {
                 print(error)
             } else {
