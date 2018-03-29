@@ -17,6 +17,7 @@ The following **stretch** features are implemented:
 
 - [ ] Users can send each other private messages
 - [ ] Social graph connects users
+- [ ] Animate User login
 
 <!---
 ## Video Walkthrough
