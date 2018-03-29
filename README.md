@@ -7,6 +7,7 @@
 The following **1** functionality is completed:
 
 - [ ] User can post an interview request
+- [x] User is taken to a home feed viewcontroller
 - [ ] User can comment on other user's post
 - [ ] User can customize a profile
 - [ ] User can access Settings screenaccess

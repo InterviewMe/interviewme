@@ -38,7 +38,6 @@ class SignUpViewController: UIViewController {
         newUserAccount.last_name = self.lastNameTextField.text!
         newUserAccount.username = self.emailTextField.text!
         newUserAccount.email = self.emailTextField.text!
-        newUserAccount.biography = ""
         newUserAccount.password = passwordTextField.text
  
         // sign up function for PFUser
