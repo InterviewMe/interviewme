@@ -407,11 +407,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DUC-ga-Kwc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-<<<<<<< HEAD
             <point key="canvasLocation" x="2084" y="-624"/>
-=======
-            <point key="canvasLocation" x="1188" y="944"/>
->>>>>>> 17c13b756bf12cfad5f65ac8d5fb268468775c92
         </scene>
         <!--Profile View Controller-->
         <scene sceneID="ezr-8m-N4v">
