@@ -4,7 +4,7 @@
 
 ## User Stories
 
-The following **1** functionality is completed:
+The following **2** functionality is completed:
 
 - [ ] User can post an interview request
 - [x] User is taken to a home feed viewcontroller
@@ -19,17 +19,31 @@ The following **stretch** features are implemented:
 - [ ] Social graph connects users
 - [ ] Animate User login
 
-<!---
+
+Database Schema:
+
+table: User
+columns: _id, email, username, last_name, first_name, hashed_password, bio, job_title, profile_url, school, major
+
+table: Post
+columns: _id, User, text, date, reply_count, reply_array
+
+
+
 ## Video Walkthrough
 
 Here's a walkthrough of implemented user stories:
 
+<<<<<<< HEAD
+=======
+![InterviewMe Video Walkthrough](https://github.com/InterviewMe/interviewme/blob/master/interviewme1.gif)
+
+>>>>>>> 17c13b756bf12cfad5f65ac8d5fb268468775c92
 -GIF created with [LiceCap](http://www.cockos.com/licecap/).
--Placeholder icon by [Gakuseisean](http://gakuseisean.deviantart.com/) from [www.iconfinder.com](www.iconfinder.com).
 
 ## Notes
 
--->
+
 
 ## License
 
