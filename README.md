@@ -10,7 +10,7 @@ The following **1** functionality is completed:
 - [x] User is taken to a home feed viewcontroller
 - [ ] User can comment on other user's post
 - [ ] User can customize a profile
-- [ ] User can access Settings screenaccess
+- [x] User can access Settings screenaccess
 - [x] User can login/signup for account
 
 The following **stretch** features are implemented:
@@ -23,8 +23,6 @@ The following **stretch** features are implemented:
 ## Video Walkthrough
 
 Here's a walkthrough of implemented user stories:
-
-![CinemaBoss Video Walkthrough](https://github.com/sks3/cinemaboss/blob/master/cinemaboss2.gif)
 
 -GIF created with [LiceCap](http://www.cockos.com/licecap/).
 -Placeholder icon by [Gakuseisean](http://gakuseisean.deviantart.com/) from [www.iconfinder.com](www.iconfinder.com).

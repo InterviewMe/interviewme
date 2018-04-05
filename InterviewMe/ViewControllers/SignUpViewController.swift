@@ -39,6 +39,7 @@ class SignUpViewController: UIViewController {
         newUserAccount.username = self.emailTextField.text!
         newUserAccount.email = self.emailTextField.text!
         newUserAccount.password = passwordTextField.text
+        newUserAccount.profile_image = PFFile(name: "profile_image.png", data: UIImagePNGRepresentation(UIImage(named: "noprofileimage")!)!)!
  
         // sign up function for PFUser
         newUserAccount.signUpInBackground { (success: Bool, error: Error?) in

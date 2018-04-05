@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		287288522075BCA90044D89F /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287288512075BCA80044D89F /* ProfileViewController.swift */; };
+		287288582075C9C70044D89F /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287288572075C9C70044D89F /* EditProfileViewController.swift */; };
+		2872885A2075CBF80044D89F /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287288592075CBF80044D89F /* SettingsTableViewController.swift */; };
 		28CC5D2B206B2602007B269A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28CC5D2A206B2602007B269A /* LoginViewController.swift */; };
 		28CC5D2D206B260E007B269A /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28CC5D2C206B260E007B269A /* SignUpViewController.swift */; };
 		28CC5D33206B3A11007B269A /* UserAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28CC5D32206B3A11007B269A /* UserAccount.swift */; };
@@ -44,6 +47,9 @@
 /* Begin PBXFileReference section */
 		008A9B2573E5BEC7CD28952A /* Pods-InterviewMe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InterviewMe.release.xcconfig"; path = "Pods/Target Support Files/Pods-InterviewMe/Pods-InterviewMe.release.xcconfig"; sourceTree = "<group>"; };
 		04CD1F60D11C465599F5C745 /* Pods-InterviewMe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InterviewMe.debug.xcconfig"; path = "Pods/Target Support Files/Pods-InterviewMe/Pods-InterviewMe.debug.xcconfig"; sourceTree = "<group>"; };
+		287288512075BCA80044D89F /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		287288572075C9C70044D89F /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
+		287288592075CBF80044D89F /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		28CC5D2A206B2602007B269A /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		28CC5D2C206B260E007B269A /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		28CC5D32206B3A11007B269A /* UserAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAccount.swift; sourceTree = "<group>"; };
@@ -105,6 +111,9 @@
 				28CC5D2A206B2602007B269A /* LoginViewController.swift */,
 				28CC5D2C206B260E007B269A /* SignUpViewController.swift */,
 				3D95943620716C9700BCEECF /* FeedViewController.swift */,
+				287288512075BCA80044D89F /* ProfileViewController.swift */,
+				287288592075CBF80044D89F /* SettingsTableViewController.swift */,
+				287288572075C9C70044D89F /* EditProfileViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -505,7 +514,10 @@
 				E7FB7C7D2050CCB000ADAF7B /* AppDelegate.swift in Sources */,
 				28CC5D33206B3A11007B269A /* UserAccount.swift in Sources */,
 				3D95943320716B3400BCEECF /* Post.swift in Sources */,
+				2872885A2075CBF80044D89F /* SettingsTableViewController.swift in Sources */,
+				287288522075BCA90044D89F /* ProfileViewController.swift in Sources */,
 				3D95943720716C9700BCEECF /* FeedViewController.swift in Sources */,
+				287288582075C9C70044D89F /* EditProfileViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

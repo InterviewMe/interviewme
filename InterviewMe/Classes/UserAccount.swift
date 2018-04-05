@@ -13,6 +13,7 @@ class UserAccount: PFUser {
     @NSManaged var first_name: String
     @NSManaged var last_name: String
     @NSManaged var biography: String?
+    @NSManaged var profile_image: PFFile
     
     class func createAccount(email: String, password: String, first_name: String, last_name: String, withCompletion completion: PFBooleanResultBlock?) {
         // will migrate code to here later
