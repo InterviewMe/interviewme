@@ -18,7 +18,6 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     var posts: [PFObject] = []
     
-    
     // refresh
     var refreshControl: UIRefreshControl!
     
@@ -35,9 +34,12 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         refreshControl.addTarget(self, action: #selector (FeedViewController.didPullToRefresh(_:)), for: .valueChanged)
         tableView.insertSubview(refreshControl, at: 0);
         updateMessage()
-        // Do any additional setup after loading the view.
-        // Do any additional setup after loading the view.
+        
     }
+    
+    @IBAction func composeButton(_ sender: Any) {
+    }
+    
     
     // update display
     func updateMessage(){
@@ -46,7 +48,7 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         let query = PFQuery(className: "Post")
         
         query.order(byDescending: "createdAt")
-        query.includeKey("user")
+        //query.includeKey("user")
         query.limit = 50
         
         // fetch data asynchronously
@@ -60,8 +62,6 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
                 // handle error
             }
         }
-        
-        
     }
     
     // pull to refresh
@@ -75,14 +75,31 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         return posts.count;
     }
     
+    // This is just for display purpose. NEEDS TO BE DELTED once dynamic cell height is implemented
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
+    {
+        return 300.0;//Choose your custom row height
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "JobCell", for: indexPath) as! JobCell
         let post = posts[indexPath.row]
         
-        
-        if let user = post["user"] as? PFUser {
+        if post["user"] != nil {
             // User found! update username label with username
-            cell.name.text = post["name"] as! String
+            let usernamePointer = post.value(forKey: "user") as! PFUser
+            let usernameId = usernamePointer.value(forKey: "objectId") as! String
+            let usernameQuery = PFUser.query()
+            usernameQuery?.getObjectInBackground(withId: usernameId) {
+                (usernameObject: PFObject?, error: Error?) -> Void in
+                if error == nil {
+                    let firstName = usernameObject?.value(forKey: "first_name") as? String
+                    let lastName = usernameObject?.value(forKey: "last_name") as? String
+                    cell.name.text = firstName! + " " + lastName!
+                } else {
+                    print("Error in retrieving username: \(error!)")
+                }
+            }
             cell.textView.text = post["text"] as! String
             
         } else {
@@ -100,15 +117,6 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    @IBAction func logoutButton(_ sender: Any) {
-        PFUser.logOutInBackground { (error: Error?) in
-            // PFUser.current() will now be nil
-        }
-        let vc = self.storyboard?.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
-        self.present(vc, animated: true, completion: nil)
-    }
-    
     
 }
 

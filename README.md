@@ -6,7 +6,7 @@
 
 The following **2** functionality is completed:
 
-- [ ] User can post an interview request
+- [x] User can post an interview request
 - [x] User is taken to a home feed viewcontroller
 - [ ] User can comment on other user's post
 - [ ] User can customize a profile
@@ -37,6 +37,8 @@ Here's a walkthrough of implemented user stories:
 <<<<<<< HEAD
 =======
 ![InterviewMe Video Walkthrough](https://github.com/InterviewMe/interviewme/blob/master/interviewme1.gif)
+
+![InterviewMe Video Walkthrough](https://github.com/InterviewMe/interviewme/blob/master/interviewme2.gif)
 
 >>>>>>> 17c13b756bf12cfad5f65ac8d5fb268468775c92
 -GIF created with [LiceCap](http://www.cockos.com/licecap/).

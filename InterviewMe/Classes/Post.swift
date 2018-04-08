@@ -11,12 +11,20 @@ import Parse
 
 class Post: PFObject, PFSubclassing {
     @NSManaged var user: PFUser?
-    @NSManaged var name: String?
     @NSManaged var date: NSDate?
     @NSManaged var text: String?
     @NSManaged var commentCount: Int
     
     class func parseClassName() -> String {
-        return "Message"
+        return "Post"
+    }
+    
+    class func post(withPostText text: String?, withCompletion completion: PFBooleanResultBlock?) {
+        let post = Post()
+        
+        post.user = UserAccount.current()
+        post.text = text
+        post.commentCount = 0
+        post.saveInBackground()
     }
 }
