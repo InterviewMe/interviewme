@@ -4,7 +4,7 @@
 
 ## User Stories
 
-The following **2** functionality is completed:
+The following **4** functionality is completed:
 
 - [x] User can post an interview request
 - [x] User is taken to a home feed viewcontroller
