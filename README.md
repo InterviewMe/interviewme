@@ -18,6 +18,7 @@ The following **stretch** features are implemented:
 - [ ] Users can send each other private messages
 - [ ] Social graph connects users
 - [ ] Animate User login
+- [ ] Style individual view controllers
 
 
 Database Schema:
@@ -34,22 +35,14 @@ columns: _id, User, text, date, reply_count, reply_array
 
 Here's a walkthrough of implemented user stories:
 
-<<<<<<< HEAD
-=======
-![InterviewMe Video Walkthrough](https://github.com/InterviewMe/interviewme/blob/master/interviewme1.gif)
+![InterviewMe Video Walkthrough](https://github.com/InterviewMe/interviewme/blob/master/interviewme3.gif)
 
-![InterviewMe Video Walkthrough](https://github.com/InterviewMe/interviewme/blob/master/interviewme2.gif)
-
->>>>>>> 17c13b756bf12cfad5f65ac8d5fb268468775c92
 -GIF created with [LiceCap](http://www.cockos.com/licecap/).
-
-## Notes
-
 
 
 ## License
 
-Copyright 2018 InterviewMe
+Copyright 2018 InterviewMe: Tianyu Liang, Somi Singh, Henry Vuong
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
