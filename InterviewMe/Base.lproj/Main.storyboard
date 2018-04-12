@@ -186,6 +186,11 @@
                         <viewLayoutGuide key="safeArea" id="dba-a9-vcI"/>
                     </view>
                     <navigationItem key="navigationItem" id="JV7-Sb-41M">
+                        <barButtonItem key="leftBarButtonItem" title="Logout" id="7Cu-8l-8Vd">
+                            <connections>
+                                <action selector="didLogout:" destination="Pnj-Lj-m9m" id="QFW-CJ-lsp"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Compose" id="Fuk-OH-Edt">
                             <connections>
                                 <action selector="composeButton:" destination="Pnj-Lj-m9m" id="jE0-ax-iQr"/>

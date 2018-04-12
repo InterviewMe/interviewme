@@ -36,7 +36,17 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         updateMessage()
         
     }
-    
+  
+  
+  
+  // log out current user and load login vc
+  @IBAction func didLogout(_ sender: Any) {
+    NotificationCenter.default.post(name: NSNotification.Name("didLogout"), object: nil)
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    appDelegate.logOut()
+  }
+  
+  
     @IBAction func composeButton(_ sender: Any) {
     }
     
