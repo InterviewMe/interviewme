@@ -9,8 +9,8 @@
 /* Begin PBXBuildFile section */
 		282E2F51207AB6CD00BF169A /* ComposeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282E2F50207AB6CD00BF169A /* ComposeViewController.swift */; };
 		287288522075BCA90044D89F /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287288512075BCA80044D89F /* ProfileViewController.swift */; };
-		287288582075C9C70044D89F /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287288572075C9C70044D89F /* EditProfileViewController.swift */; };
 		2872885A2075CBF80044D89F /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287288592075CBF80044D89F /* SettingsTableViewController.swift */; };
+		28B821C32080278B00B03890 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B821C22080278B00B03890 /* EditProfileViewController.swift */; };
 		28CC5D2B206B2602007B269A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28CC5D2A206B2602007B269A /* LoginViewController.swift */; };
 		28CC5D2D206B260E007B269A /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28CC5D2C206B260E007B269A /* SignUpViewController.swift */; };
 		28CC5D33206B3A11007B269A /* UserAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28CC5D32206B3A11007B269A /* UserAccount.swift */; };
@@ -50,8 +50,8 @@
 		04CD1F60D11C465599F5C745 /* Pods-InterviewMe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InterviewMe.debug.xcconfig"; path = "Pods/Target Support Files/Pods-InterviewMe/Pods-InterviewMe.debug.xcconfig"; sourceTree = "<group>"; };
 		282E2F50207AB6CD00BF169A /* ComposeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposeViewController.swift; sourceTree = "<group>"; };
 		287288512075BCA80044D89F /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
-		287288572075C9C70044D89F /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		287288592075CBF80044D89F /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
+		28B821C22080278B00B03890 /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		28CC5D2A206B2602007B269A /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		28CC5D2C206B260E007B269A /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		28CC5D32206B3A11007B269A /* UserAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAccount.swift; sourceTree = "<group>"; };
@@ -114,8 +114,8 @@
 				28CC5D2C206B260E007B269A /* SignUpViewController.swift */,
 				3D95943620716C9700BCEECF /* FeedViewController.swift */,
 				287288512075BCA80044D89F /* ProfileViewController.swift */,
+				28B821C22080278B00B03890 /* EditProfileViewController.swift */,
 				287288592075CBF80044D89F /* SettingsTableViewController.swift */,
-				287288572075C9C70044D89F /* EditProfileViewController.swift */,
 				282E2F50207AB6CD00BF169A /* ComposeViewController.swift */,
 			);
 			path = ViewControllers;
@@ -511,6 +511,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				28B821C32080278B00B03890 /* EditProfileViewController.swift in Sources */,
 				28CC5D2B206B2602007B269A /* LoginViewController.swift in Sources */,
 				3D95943520716BF100BCEECF /* JobCell.swift in Sources */,
 				28CC5D2D206B260E007B269A /* SignUpViewController.swift in Sources */,
@@ -521,7 +522,6 @@
 				2872885A2075CBF80044D89F /* SettingsTableViewController.swift in Sources */,
 				287288522075BCA90044D89F /* ProfileViewController.swift in Sources */,
 				3D95943720716C9700BCEECF /* FeedViewController.swift in Sources */,
-				287288582075C9C70044D89F /* EditProfileViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
