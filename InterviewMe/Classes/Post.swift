@@ -11,7 +11,7 @@ import Parse
 
 class Post: PFObject, PFSubclassing {
     @NSManaged var user: PFUser?
-    @NSManaged var date: NSDate?
+    @NSManaged var date: String?
     @NSManaged var text: String?
     @NSManaged var commentCount: Int
     
@@ -25,6 +25,10 @@ class Post: PFObject, PFSubclassing {
         post.user = UserAccount.current()
         post.text = text
         post.commentCount = 0
+        let formatter : DateFormatter = DateFormatter();
+        formatter.dateFormat = "M/d/yy";
+        let myStr : String = formatter.string(from: NSDate.init(timeIntervalSinceNow: 0) as Date);
+        post.date = myStr
         post.saveInBackground()
     }
 }

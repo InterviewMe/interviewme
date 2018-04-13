@@ -95,6 +95,7 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         let cell = tableView.dequeueReusableCell(withIdentifier: "JobCell", for: indexPath) as! JobCell
         let post = posts[indexPath.row]
         
+        
         if post["user"] != nil {
             // User found! update username label with username
             let usernamePointer = post.value(forKey: "user") as! PFUser
@@ -106,6 +107,7 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
                     let firstName = usernameObject?.value(forKey: "first_name") as? String
                     let lastName = usernameObject?.value(forKey: "last_name") as? String
                     cell.name.text = firstName! + " " + lastName!
+                    cell.date.text = post["date"] as? String
                 } else {
                     print("Error in retrieving username: \(error!)")
                 }
