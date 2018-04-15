@@ -193,12 +193,7 @@
                         <viewLayoutGuide key="safeArea" id="dba-a9-vcI"/>
                     </view>
                     <navigationItem key="navigationItem" id="JV7-Sb-41M">
-                        <barButtonItem key="leftBarButtonItem" title="Logout" id="7Cu-8l-8Vd">
-                            <connections>
-                                <action selector="didLogout:" destination="Pnj-Lj-m9m" id="QFW-CJ-lsp"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Compose" id="Fuk-OH-Edt">
+                        <barButtonItem key="rightBarButtonItem" systemItem="compose" id="Fuk-OH-Edt">
                             <connections>
                                 <action selector="composeButton:" destination="Pnj-Lj-m9m" id="jE0-ax-iQr"/>
                                 <segue destination="BBE-oO-PrB" kind="presentation" id="rEM-mv-Tgg"/>
@@ -552,13 +547,12 @@
         <!--Edit Profile View Controller-->
         <scene sceneID="q4F-JY-X2J">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="aKh-EL-e6B" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="MOS-2b-wmo" customClass="EditProfileViewController" customModule="InterviewMe" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zNW-8C-2Sp">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cDY-dn-RI6">
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="First name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cDY-dn-RI6">
                                 <rect key="frame" x="68" y="203" width="238" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
@@ -572,7 +566,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WhZ-k9-Gwz">
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Last name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WhZ-k9-Gwz">
                                 <rect key="frame" x="68" y="254" width="238" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
@@ -587,18 +581,30 @@
                                 <rect key="frame" x="313" y="76" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Save"/>
+                                <connections>
+                                    <action selector="saveButton:" destination="MOS-2b-wmo" eventType="touchUpInside" id="h9r-tZ-Bdp"/>
+                                </connections>
                             </button>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nZv-M5-8gM">
+                                <rect key="frame" x="68" y="304" width="238" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="yTC-NA-Srs"/>
                     </view>
                     <connections>
                         <outlet property="biographyTextField" destination="cI2-RC-lx8" id="YGE-0W-7VQ"/>
+                        <outlet property="emailLabel" destination="nZv-M5-8gM" id="bG0-a1-6JY"/>
                         <outlet property="firstNameLabel" destination="cDY-dn-RI6" id="NBE-gu-P8z"/>
                         <outlet property="lastNameLabel" destination="WhZ-k9-Gwz" id="54Q-EC-dVA"/>
                         <outlet property="profileImageView" destination="8J7-5S-3C7" id="Qk1-hx-xrZ"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aKh-EL-e6B" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3633" y="893"/>
         </scene>

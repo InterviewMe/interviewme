@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Parse
 
 class EditProfileViewController: UIViewController {
 
@@ -15,6 +16,8 @@ class EditProfileViewController: UIViewController {
     @IBOutlet weak var firstNameLabel: UITextField!
     
     @IBOutlet weak var lastNameLabel: UITextField!
+    
+    @IBOutlet weak var emailLabel: UITextField!
     
     @IBOutlet weak var biographyTextField: UITextView!
     
@@ -25,6 +28,8 @@ class EditProfileViewController: UIViewController {
 
         firstNameLabel.text = user.first_name
         lastNameLabel.text = user.last_name
+        emailLabel.text = user.email
+        biographyTextField.text = user.biography ?? ""
         user.profile_image.getDataInBackground(block: {
             (imageData: Data!, error: Error!) -> Void in
             if (error == nil) {
@@ -40,6 +45,20 @@ class EditProfileViewController: UIViewController {
     }
     
     @IBAction func saveButton(_ sender: Any) {
+        let query = PFQuery(className:"_User")
+        query.getObjectInBackground(withId: user.objectId!) {
+            (userObject: PFObject?, error: Error?) -> Void in
+            if error != nil {
+                print(error)
+            } else if let userObject = userObject {
+                userObject["first_name"] = self.firstNameLabel.text
+                userObject["last_name"] = self.lastNameLabel.text
+                userObject["email"] = self.emailLabel.text
+                userObject["username"] = self.emailLabel.text
+                userObject["biography"] = self.biographyTextField.text
+                userObject.saveInBackground()
+            }
+        }
     }
     
     
