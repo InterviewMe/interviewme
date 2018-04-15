@@ -98,6 +98,14 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
                     let lastName = usernameObject?.value(forKey: "last_name") as? String
                     cell.name.text = firstName! + " " + lastName!
                     cell.date.text = post["date"] as? String
+                    let profileImagePFFile = usernameObject?.value(forKey: "profile_image") as? PFFile
+                    profileImagePFFile?.getDataInBackground(block: {
+                        (imageData: Data!, error: Error!) -> Void in
+                        if (error == nil) {
+                            cell.profileImage.image = UIImage(data:imageData)
+                            
+                        }
+                    })
                 } else {
                     print("Error in retrieving username: \(error!)")
                 }
