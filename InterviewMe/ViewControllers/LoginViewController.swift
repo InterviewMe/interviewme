@@ -20,7 +20,14 @@ class LoginViewController: UIViewController {
 
     }
 
-    override func didReceiveMemoryWarning() {
+  @IBAction func didTapBackground(_ sender: Any) {
+      usernameTextField.endEditing(true)
+      passwordTextField.endEditing(true)
+      view.endEditing(true)
+  }
+  
+  
+  override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
     

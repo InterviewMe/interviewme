@@ -16,7 +16,11 @@ class ComposeViewController: UIViewController {
         super.viewDidLoad()
 
     }
-
+  
+  @IBAction func didTapBackground(_ sender: Any) {
+    postTextField.endEditing(true)
+    view.endEditing(true)
+  }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }

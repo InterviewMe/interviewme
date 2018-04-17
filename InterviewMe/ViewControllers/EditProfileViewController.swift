@@ -34,6 +34,16 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
         profileImageView.addGestureRecognizer(tapGestureRecognizer)
     }
 
+  
+  @IBAction func didTapBackground(_ sender: Any) {
+    firstNameLabel.endEditing(true)
+    lastNameLabel.endEditing(true)
+    emailLabel.endEditing(true)
+    biographyTextField.endEditing(true)
+    view.endEditing(true)
+  }
+  
+  
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }

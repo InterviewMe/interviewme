@@ -25,10 +25,13 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
+      // Provide an estimated row height. Used for calculating scroll indicator
+      tableView.estimatedRowHeight = 30
+      
+      
         // Auto size row height based on cell autolayout constraints
-        tableView.rowHeight = UITableViewAutomaticDimension
-        // Provide an estimated row height. Used for calculating scroll indicator
-        tableView.estimatedRowHeight = 50
+       // tableView.rowHeight = UITableViewAutomaticDimension
+
         // refresh
         refreshControl = UIRefreshControl()
         refreshControl.addTarget(self, action: #selector (FeedViewController.didPullToRefresh(_:)), for: .valueChanged)
