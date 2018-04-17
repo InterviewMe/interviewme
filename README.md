@@ -4,12 +4,12 @@
 
 ## User Stories
 
-The following **4** functionality is completed:
+The following **6** functionalities have been completed:
 
 - [x] User can post an interview request
 - [x] User is taken to a home feed viewcontroller
-- [ ] User can comment on other user's post
-- [ ] User can customize a profile
+- [x] User can comment on other user's post
+- [x] User can customize a profile
 - [x] User can access Settings screenaccess
 - [x] User can login/signup for account
 
@@ -35,7 +35,7 @@ columns: _id, User, text, date, reply_count, reply_array
 
 Here's a walkthrough of implemented user stories:
 
-![InterviewMe Video Walkthrough](https://github.com/InterviewMe/interviewme/blob/master/interviewme3.gif)
+![InterviewMe Video Walkthrough](https://github.com/InterviewMe/interviewme/blob/master/interviewme4.gif)
 
 -GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
