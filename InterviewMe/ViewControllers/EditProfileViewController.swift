@@ -25,7 +25,7 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        user = try! UserAccount.current()!.fetch()
         updateInfo()
         
         // tap to edit profile view
@@ -36,7 +36,6 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     @IBAction func saveButton(_ sender: Any) {
@@ -53,8 +52,7 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
                 userObject["biography"] = self.biographyTextField.text
                 userObject["profile_image"] = PFFile(name: "profile_image.png", data: UIImagePNGRepresentation(self.profileImageView.image!)!)
                 userObject.saveInBackground()
-                self.user = try! UserAccount.current()!.fetch()
-                self.updateInfo()
+
             }
         }
         

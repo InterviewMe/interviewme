@@ -19,13 +19,31 @@ class ProfileViewController: UIViewController {
     
     @IBOutlet weak var emailLabel: UILabel!
     
+    @IBOutlet weak var biographyLabel: UILabel!
+    
+    
     var user = UserAccount.current()!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        updateInfo()
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        user = try! UserAccount.current()!.fetch()
+        updateInfo()
+    }
+
+    func updateInfo() {
         nameLabel.text = user.first_name + " " + user.last_name
         emailLabel.text = user.email
+        biographyLabel.text = user.biography
         user.profile_image.getDataInBackground(block: {
             (imageData: Data!, error: Error!) -> Void in
             if (error == nil) {
@@ -33,13 +51,7 @@ class ProfileViewController: UIViewController {
                 
             }
         })
-        
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-
-    }
-
+    
 
 }
