@@ -25,7 +25,12 @@ class SignUpViewController: UIViewController {
         super.viewDidLoad()
 
     }
+  
+  @IBAction func didCancel(_ sender: Any) {
+    self.dismiss(animated: true, completion: nil)
 
+  }
+  
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
