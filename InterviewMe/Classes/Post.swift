@@ -16,6 +16,7 @@ class Post: PFObject, PFSubclassing {
     @NSManaged var likeCount: Int
     @NSManaged var likeList: [PFUser]
     @NSManaged var commentCount: Int
+    @NSManaged var commentList: [Comment]
     
     class func parseClassName() -> String {
         return "Post"
