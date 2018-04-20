@@ -16,7 +16,7 @@ class JobCell: UITableViewCell {
     @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var date: UILabel!
-    @IBOutlet weak var textView: UITextView!
+    @IBOutlet weak var comment: UILabel!
     @IBOutlet weak var commentCount: UILabel!
     
     override func awakeFromNib() {

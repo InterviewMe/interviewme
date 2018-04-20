@@ -113,12 +113,12 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
                     print("Error in retrieving username: \(error!)")
                 }
             }
-            cell.textView.text = post["text"] as! String
+            cell.comment.text = post["text"] as! String
             
         } else {
             // No user found, set default username
             cell.name.text = "gooby"
-            cell.textView.text = post["text"] as! String
+            cell.comment.text = post["text"] as! String
             
         }
         
@@ -129,6 +129,21 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+        if(segue.identifier == "Detail"){
+            let cell = sender as! JobCell
+            let detailViewController = segue.destination as! DetailViewController
+            
+            if let indexPath = tableView.indexPath(for: cell)
+            {
+                detailViewController.post = posts[indexPath.row]
+            }
+        }
+        
     }
     
 }

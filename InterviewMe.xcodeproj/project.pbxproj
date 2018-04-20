@@ -15,6 +15,7 @@
 		28CC5D2D206B260E007B269A /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28CC5D2C206B260E007B269A /* SignUpViewController.swift */; };
 		28CC5D33206B3A11007B269A /* UserAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28CC5D32206B3A11007B269A /* UserAccount.swift */; };
 		28D6E2F220895EF000D119D6 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D6E2F120895EF000D119D6 /* Comment.swift */; };
+		3D902A57208971FE00E04BDB /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D902A56208971FE00E04BDB /* DetailViewController.swift */; };
 		3D95943320716B3400BCEECF /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D95943220716B3400BCEECF /* Post.swift */; };
 		3D95943520716BF100BCEECF /* JobCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D95943420716BF100BCEECF /* JobCell.swift */; };
 		3D95943720716C9700BCEECF /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D95943620716C9700BCEECF /* FeedViewController.swift */; };
@@ -58,6 +59,7 @@
 		28CC5D32206B3A11007B269A /* UserAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAccount.swift; sourceTree = "<group>"; };
 		28D6E2F120895EF000D119D6 /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		388EA43B736160D5DF9FE723 /* Pods-InterviewMeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InterviewMeTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-InterviewMeTests/Pods-InterviewMeTests.release.xcconfig"; sourceTree = "<group>"; };
+		3D902A56208971FE00E04BDB /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		3D95943220716B3400BCEECF /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		3D95943420716BF100BCEECF /* JobCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = JobCell.swift; path = InterviewMe/Classes/JobCell.swift; sourceTree = SOURCE_ROOT; };
 		3D95943620716C9700BCEECF /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
@@ -119,6 +121,7 @@
 				28B821C22080278B00B03890 /* EditProfileViewController.swift */,
 				287288592075CBF80044D89F /* SettingsTableViewController.swift */,
 				282E2F50207AB6CD00BF169A /* ComposeViewController.swift */,
+				3D902A56208971FE00E04BDB /* DetailViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -514,6 +517,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D902A57208971FE00E04BDB /* DetailViewController.swift in Sources */,
 				28B821C32080278B00B03890 /* EditProfileViewController.swift in Sources */,
 				28CC5D2B206B2602007B269A /* LoginViewController.swift in Sources */,
 				3D95943520716BF100BCEECF /* JobCell.swift in Sources */,
