@@ -44,6 +44,7 @@ class ProfileViewController: UIViewController {
         nameLabel.text = user.first_name + " " + user.last_name
         emailLabel.text = user.email
         biographyLabel.text = user.biography
+        
         user.profile_image.getDataInBackground(block: {
             (imageData: Data!, error: Error!) -> Void in
             if (error == nil) {
