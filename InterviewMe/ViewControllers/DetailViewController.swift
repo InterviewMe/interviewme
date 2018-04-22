@@ -52,7 +52,13 @@
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
-        
+        if(segue.identifier == "GoToReply"){
+            
+
+            let CommentViewController = segue.destination as! CommentViewController
+            CommentViewController.post = self.post as? Post
+            
+        }
     }
     
     

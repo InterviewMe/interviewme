@@ -18,4 +18,31 @@ class Comment: PFObject, PFSubclassing {
         return "Comment"
     }
     
+    class func comment(withPostText text: String?, withPost post: Post?, withCompletion completion: PFBooleanResultBlock?){
+        let comment = Comment()
+        
+        comment.user = UserAccount.current()
+        comment.text = text
+        let formatter : DateFormatter = DateFormatter();
+        formatter.dateFormat = "M/d/yy";
+        let myStr : String = formatter.string(from: NSDate.init(timeIntervalSinceNow: 0) as Date);
+        comment.date = myStr
+        comment.saveInBackground(block: completion)
+        
+        let query = PFQuery(className: "Post")
+        query.getObjectInBackground(withId: (post?.objectId)!) {
+            (postObject: PFObject?, error: Error?) -> Void in
+            if error != nil {
+                print(error ?? "crap")
+            } else if let postObject = postObject {
+                post?.commentList.append(comment)
+                postObject["commentList"] = post?.commentList
+                postObject.saveInBackground()
+                
+            }
+        }
+        
+
+    }
+    
 }
