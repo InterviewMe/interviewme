@@ -4,7 +4,7 @@
 
 ## User Stories
 
-The following **6** functionalities have been completed:
+The following **8** functionalities have been completed:
 
 - [x] User can post an interview request
 - [x] User is taken to a home feed viewcontroller
@@ -17,8 +17,8 @@ The following **stretch** features are implemented:
 
 - [ ] Users can send each other private messages
 - [ ] Social graph connects users
-- [ ] Animate User login
-- [ ] Style individual view controllers
+- [x] User login is persisted across restarts
+- [x] Style individual view controllers
 
 
 Database Schema:
@@ -35,7 +35,7 @@ columns: _id, User, text, date, reply_count, reply_array
 
 Here's a walkthrough of implemented user stories:
 
-![InterviewMe Video Walkthrough](https://github.com/InterviewMe/interviewme/blob/master/interviewme4.gif)
+![InterviewMe Video Walkthrough](https://github.com/InterviewMe/interviewme/blob/master/interviewme5.gif)
 
 -GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
