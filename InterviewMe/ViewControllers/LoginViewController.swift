@@ -35,8 +35,12 @@ class LoginViewController: UIViewController {
     
     @IBOutlet weak var passwordTextField: UITextField!
     
+    @IBOutlet weak var logoImageView: UIImageView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
 
     }
 

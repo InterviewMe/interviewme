@@ -41,6 +41,9 @@ class ProfileViewController: UIViewController {
     
     @IBOutlet weak var biographyLabel: UILabel!
     
+    @IBOutlet weak var cityLabel: UILabel!
+    
+    
     
     var user = UserAccount.current()!
     
@@ -48,6 +51,13 @@ class ProfileViewController: UIViewController {
         super.viewDidLoad()
         
         updateInfo()
+        
+        // rounded corners for profile image
+        profileImageView.layer.borderWidth = 1
+        profileImageView.layer.masksToBounds = false
+        profileImageView.layer.borderWidth = 0
+        profileImageView.layer.cornerRadius = profileImageView.frame.height / 2
+        profileImageView.clipsToBounds = true
     }
 
     override func didReceiveMemoryWarning() {
@@ -58,6 +68,7 @@ class ProfileViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         user = try! UserAccount.current()!.fetch()
         updateInfo()
+
     }
 
     func updateInfo() {
