@@ -28,13 +28,36 @@
 
 import UIKit
 
-class ComposeViewController: UIViewController {
+class ComposeViewController: UIViewController, UITextViewDelegate {
 
+    @IBOutlet weak var profileImageView: UIImageView!
+    
     @IBOutlet weak var postTextField: UITextView!
+    
+    var user = UserAccount.current()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        user?.profile_image.getDataInBackground(block: {
+            (imageData: Data!, error: Error!) -> Void in
+            if (error == nil) {
+                self.profileImageView.image = UIImage(data:imageData)
+                
+            }
+        })
+        
+        postTextField.delegate = self
+        postTextField.text = "Ask an interview/recruiting questions"
+        postTextField.textColor = UIColor.lightGray
+        
+        // rounded corners for profile image
+        profileImageView.layer.borderWidth = 1
+        profileImageView.layer.masksToBounds = false
+        profileImageView.layer.borderWidth = 0
+        profileImageView.layer.cornerRadius = profileImageView.frame.height / 2
+        profileImageView.layer.borderColor = UIColor(red: 66/255, green: 207/255, blue: 175/255, alpha: 1).cgColor
+        profileImageView.clipsToBounds = true
     }
   
   @IBAction func didTapBackground(_ sender: Any) {
@@ -53,4 +76,17 @@ class ComposeViewController: UIViewController {
         Post.post(withPostText: postTextField.text, withCompletion: nil)
     }
     
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        if postTextField.textColor == UIColor.lightGray {
+            postTextField.text = nil
+            postTextField.textColor = UIColor.black
+        }
+    }
+    
+    func textViewDidEndEditing(_ textView: UITextView) {
+        if postTextField.text.isEmpty {
+            postTextField.text = "Ask an interview/recruiting questions"
+            postTextField.textColor = UIColor.lightGray
+        }
+    }
 }
