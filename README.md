@@ -15,8 +15,6 @@ The following **8** functionalities have been completed:
 
 The following **stretch** features are implemented:
 
-- [ ] Users can send each other private messages
-- [ ] Social graph connects users
 - [x] User login is persisted across restarts
 - [x] Style individual view controllers
 
@@ -35,7 +33,7 @@ columns: _id, User, text, date, reply_count, reply_array
 
 Here's a walkthrough of implemented user stories:
 
-![InterviewMe Video Walkthrough](https://github.com/InterviewMe/interviewme/blob/master/interviewme5.gif)
+![InterviewMe Video Walkthrough](https://github.com/InterviewMe/interviewme/blob/master/interviewme6.gif)
 
 -GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
