@@ -13,6 +13,7 @@
 		287288522075BCA90044D89F /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287288512075BCA80044D89F /* ProfileViewController.swift */; };
 		2872885A2075CBF80044D89F /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287288592075CBF80044D89F /* SettingsTableViewController.swift */; };
 		28B821C32080278B00B03890 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B821C22080278B00B03890 /* EditProfileViewController.swift */; };
+		28CB4C0820A355FD00C5B0F2 /* ColorScheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28CB4C0720A355FD00C5B0F2 /* ColorScheme.swift */; };
 		28CC5D2B206B2602007B269A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28CC5D2A206B2602007B269A /* LoginViewController.swift */; };
 		28CC5D2D206B260E007B269A /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28CC5D2C206B260E007B269A /* SignUpViewController.swift */; };
 		28CC5D33206B3A11007B269A /* UserAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28CC5D32206B3A11007B269A /* UserAccount.swift */; };
@@ -59,6 +60,7 @@
 		287288512075BCA80044D89F /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		287288592075CBF80044D89F /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		28B821C22080278B00B03890 /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
+		28CB4C0720A355FD00C5B0F2 /* ColorScheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorScheme.swift; sourceTree = "<group>"; };
 		28CC5D2A206B2602007B269A /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		28CC5D2C206B260E007B269A /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		28CC5D32206B3A11007B269A /* UserAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAccount.swift; sourceTree = "<group>"; };
@@ -156,6 +158,7 @@
 				28CC5D32206B3A11007B269A /* UserAccount.swift */,
 				3D95943220716B3400BCEECF /* Post.swift */,
 				28D6E2F120895EF000D119D6 /* Comment.swift */,
+				28CB4C0720A355FD00C5B0F2 /* ColorScheme.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -550,6 +553,7 @@
 				2872885A2075CBF80044D89F /* SettingsTableViewController.swift in Sources */,
 				287288522075BCA90044D89F /* ProfileViewController.swift in Sources */,
 				3D95943720716C9700BCEECF /* FeedViewController.swift in Sources */,
+				28CB4C0820A355FD00C5B0F2 /* ColorScheme.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

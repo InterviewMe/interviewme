@@ -57,7 +57,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     UINavigationBar.appearance().tintColor = UIColor.white
     UINavigationBar.appearance().titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
-    UINavigationBar.appearance().barTintColor = UIColor(red: 66/255, green: 207/255, blue: 175/255, alpha: 1)
+    UINavigationBar.appearance().barTintColor = ColorScheme.mainColor
     return true
   }
   

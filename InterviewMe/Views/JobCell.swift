@@ -33,15 +33,14 @@ import Parse
 class JobCell: UITableViewCell {
     
     // cell elements
-    @IBOutlet weak var profileImage: UIImageView!
+    @IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var date: UILabel!
-    @IBOutlet weak var comment: UILabel!
+    @IBOutlet weak var postText: UILabel!
     @IBOutlet weak var commentCount: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {

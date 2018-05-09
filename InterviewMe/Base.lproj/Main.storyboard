@@ -266,20 +266,22 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="comment" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hc1-yq-dW8">
-                                                    <rect key="frame" x="85" y="103" width="205" height="89"/>
+                                                    <rect key="frame" x="90" y="107" width="200" height="85"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
-                                            <outlet property="comment" destination="Hc1-yq-dW8" id="h4A-IL-FxO"/>
                                             <outlet property="commentCount" destination="yAY-5q-BtE" id="rmm-5K-CGR"/>
                                             <outlet property="date" destination="I4a-IC-Q1f" id="kQi-BE-5zf"/>
                                             <outlet property="name" destination="foh-vw-423" id="bCO-ek-324"/>
-                                            <outlet property="profileImage" destination="aN9-U0-kvu" id="zX8-09-Tkp"/>
+                                            <outlet property="postText" destination="Hc1-yq-dW8" id="erC-i3-xUc"/>
+                                            <outlet property="profileImageView" destination="aN9-U0-kvu" id="5Gv-UX-6Fq"/>
                                             <segue destination="Bhw-6T-cY4" kind="show" identifier="Detail" id="gpe-at-c59"/>
                                         </connections>
                                     </tableViewCell>
@@ -304,7 +306,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dnc-hq-wZo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1911" y="170"/>
+            <point key="canvasLocation" x="1909.5999999999999" y="169.56521739130437"/>
         </scene>
         <!--Compose View Controller-->
         <scene sceneID="o4N-fP-3LU">
