@@ -33,10 +33,11 @@ class Post: PFObject, PFSubclassing {
     @NSManaged var user: PFUser?
     @NSManaged var date: String?
     @NSManaged var text: String?
-    @NSManaged var likeCount: Int
-    @NSManaged var likeList: [PFUser]
-    @NSManaged var commentCount: Int
-    @NSManaged var commentList: [Comment]
+    @NSManaged var like_count: Int
+    // like_list will have string representation of the UserAccounts that have liked it
+    @NSManaged var like_list: [String]
+    @NSManaged var comment_count: Int
+    @NSManaged var comment_list: [Comment]
     
     class func parseClassName() -> String {
         return "Post"
@@ -47,7 +48,10 @@ class Post: PFObject, PFSubclassing {
         
         post.user = UserAccount.current()
         post.text = text
-        post.commentCount = 0
+        post.comment_count = 0
+        post.comment_list = []
+        post.like_count = 0
+        post.like_list = []
         let formatter : DateFormatter = DateFormatter();
         formatter.dateFormat = "M/d/yy";
         let myStr : String = formatter.string(from: NSDate.init(timeIntervalSinceNow: 0) as Date);

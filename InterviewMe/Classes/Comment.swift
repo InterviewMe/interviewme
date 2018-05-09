@@ -55,8 +55,9 @@ class Comment: PFObject, PFSubclassing {
             if error != nil {
                 print(error ?? "crap")
             } else if let postObject = postObject {
-                post?.commentList.append(comment)
-                postObject["commentList"] = post?.commentList
+                post?.comment_list.append(comment)
+                postObject["comment_list"] = post?.comment_list
+                postObject["comment_count"] = (postObject["comment_count"] as! Int) + 1
                 postObject.saveInBackground()
                 
             }

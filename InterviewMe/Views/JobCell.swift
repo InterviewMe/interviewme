@@ -38,6 +38,9 @@ class JobCell: UITableViewCell {
     @IBOutlet weak var date: UILabel!
     @IBOutlet weak var postText: UILabel!
     @IBOutlet weak var commentCount: UILabel!
+    @IBOutlet weak var likeCount: UILabel!
+    
+    var post: Post!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -47,6 +50,53 @@ class JobCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
         
         // Configure the view for the selected state
+    }
+    
+    @IBAction func likeButton(_ sender: Any) {
+
+        if post.like_list.contains(UserAccount.current()!.value(forKey: "objectId")! as! String) {
+            // unlike post
+            let query = PFQuery(className: "Post")
+            query.getObjectInBackground(withId: (post?.objectId)!) {
+                (postObject: PFObject?, error: Error?) -> Void in
+                if error != nil {
+                    print(error ?? "crap")
+                } else if let postObject = postObject {
+                    
+                    self.post.like_list.remove(at: self.post.like_list.index(of: (UserAccount.current()!.value(forKey: "objectId")! as! String))!)
+                    postObject["like_list"] = self.post.like_list
+                    postObject["like_count"] = Int(self.likeCount.text!)! - 1
+                    postObject.saveInBackground()
+                    
+                    // update UI
+                    self.likeCount.text = String(postObject["like_count"] as! Int)
+                    
+                    
+                }
+            }
+        } else {
+            // like post
+            let query = PFQuery(className: "Post")
+            query.getObjectInBackground(withId: (post?.objectId)!) {
+                (postObject: PFObject?, error: Error?) -> Void in
+                if error != nil {
+                    print(error ?? "crap")
+                } else if let postObject = postObject {
+                    self.post.like_list.append(UserAccount.current()!.value(forKey: "objectId")! as! String)
+                    postObject["like_list"] = self.post.like_list
+                    postObject["like_count"] = Int(self.likeCount.text!)! + 1
+                    postObject.saveInBackground()
+                    
+                    // update UI
+                    self.likeCount.text = String(postObject["like_count"] as! Int)
+                    
+                    
+                }
+            }
+        }
+    }
+    
+    @IBAction func commentButton(_ sender: Any) {
     }
     
 }

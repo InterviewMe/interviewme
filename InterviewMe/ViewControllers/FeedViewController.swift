@@ -46,11 +46,7 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
     
         tableView.delegate = self
         tableView.dataSource = self
-        // Provide an estimated row height. Used for calculating scroll indicator
-        tableView.estimatedRowHeight = 30
-    
-        // Auto size row height based on cell autolayout constraints
-        // tableView.rowHeight = UITableViewAutomaticDimension
+        
     
         // refresh
         refreshControl = UIRefreshControl()
@@ -96,7 +92,7 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
     
         return posts.count;
     }
-  
+    
     // This is just for display purpose. NEEDS TO BE DELTED once dynamic cell height is implemented
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
     {
@@ -148,6 +144,7 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
                         }
                     })
                     
+                    
                     // rounded corners for profile image
                     cell.profileImageView.layer.borderWidth = 1
                     cell.profileImageView.layer.masksToBounds = false
@@ -160,6 +157,10 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
                 }
             }
             cell.postText.text = post["text"] as? String
+            cell.commentCount.text = String(post["comment_count"] as! Int)
+            cell.likeCount.text = String(post["like_count"] as! Int)
+            
+            cell.post = posts[indexPath.row] as? Post
             
         } else {
             // No user found, set default username
@@ -180,7 +181,7 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
-        if(segue.identifier == "Detail"){
+        if(segue.identifier == "PostDetailSegue"){
             let cell = sender as! JobCell
             let detailViewController = segue.destination as! DetailViewController
             
@@ -191,9 +192,6 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
     
     }
-    
-    
-    
   
 }
 
