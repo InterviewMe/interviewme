@@ -73,7 +73,13 @@ class ComposeViewController: UIViewController, UITextViewDelegate {
     }
     
     @IBAction func saveButton(_ sender: Any) {
-        Post.post(withPostText: postTextField.text, withCompletion: nil)
+        Post.post(withPostText: postTextField.text, withCompletion: { (succeeded, error) -> Void in
+            if succeeded {
+                self.dismiss(animated: true, completion: nil)
+            } else {
+                // tell user that the post failed
+            }
+        })
     }
     
     func textViewDidBeginEditing(_ textView: UITextView) {

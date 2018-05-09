@@ -119,20 +119,39 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
       usernameQuery?.getObjectInBackground(withId: usernameId) {
         (usernameObject: PFObject?, error: Error?) -> Void in
         if error == nil {
-          let firstName = usernameObject?.value(forKey: "first_name") as? String
-          let lastName = usernameObject?.value(forKey: "last_name") as? String
-          cell.name.text = firstName! + " " + lastName!
-          cell.date.text = post["date"] as? String
-          let profileImagePFFile = usernameObject?.value(forKey: "profile_image") as? PFFile
-          profileImagePFFile?.getDataInBackground(block: {
-            (imageData: Data!, error: Error!) -> Void in
-            if (error == nil) {
-              cell.profileImage.image = UIImage(data:imageData)
+            let firstName = usernameObject?.value(forKey: "first_name") as? String
+            let lastName = usernameObject?.value(forKey: "last_name") as? String
+            cell.name.text = firstName! + " " + lastName!
+            
+            // create the interval between the post date and the current date
+            
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "M/d/yy"
+            
+            guard let postDate = dateFormatter.date(from: post["date"] as! String) else {
+                fatalError("ERROR: Date conversion failed due to mismatched format.")
+            }
+            
+            let today = Date()
+            let interval = today.interval(ofComponent: .day, fromDate: postDate)
+            if interval == 0 {
+                cell.date.text = "Today"
+            } else {
+                cell.date.text = String(interval) + "d"
+            }
+
+            // get profile image
+            let profileImagePFFile = usernameObject?.value(forKey: "profile_image") as? PFFile
+            profileImagePFFile?.getDataInBackground(block: { (imageData: Data!, error: Error!) ->
+             Void in
+                if (error == nil) {
+                    
+                    cell.profileImage.image = UIImage(data:imageData)
               
             }
           })
         } else {
-          print("Error in retrieving username: \(error!)")
+            print("Error in retrieving username: \(error!)")
         }
       }
       cell.comment.text = post["text"] as! String
@@ -167,6 +186,8 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
   }
+    
+    
   
 }
 

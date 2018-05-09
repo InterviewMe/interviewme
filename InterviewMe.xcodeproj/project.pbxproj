@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		282E2F51207AB6CD00BF169A /* ComposeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282E2F50207AB6CD00BF169A /* ComposeViewController.swift */; };
+		2834588520A2C39B00EFBACC /* Date+Interval.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2834588420A2C39B00EFBACC /* Date+Interval.swift */; };
 		2846A2F62091AF88005DC022 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2846A2F52091AF88005DC022 /* CardView.swift */; };
 		287288522075BCA90044D89F /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287288512075BCA80044D89F /* ProfileViewController.swift */; };
 		2872885A2075CBF80044D89F /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287288592075CBF80044D89F /* SettingsTableViewController.swift */; };
@@ -53,6 +54,7 @@
 		008A9B2573E5BEC7CD28952A /* Pods-InterviewMe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InterviewMe.release.xcconfig"; path = "Pods/Target Support Files/Pods-InterviewMe/Pods-InterviewMe.release.xcconfig"; sourceTree = "<group>"; };
 		04CD1F60D11C465599F5C745 /* Pods-InterviewMe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InterviewMe.debug.xcconfig"; path = "Pods/Target Support Files/Pods-InterviewMe/Pods-InterviewMe.debug.xcconfig"; sourceTree = "<group>"; };
 		282E2F50207AB6CD00BF169A /* ComposeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposeViewController.swift; sourceTree = "<group>"; };
+		2834588420A2C39B00EFBACC /* Date+Interval.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Interval.swift"; sourceTree = "<group>"; };
 		2846A2F52091AF88005DC022 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		287288512075BCA80044D89F /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		287288592075CBF80044D89F /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
@@ -115,6 +117,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2834588320A2C37500EFBACC /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				2834588420A2C39B00EFBACC /* Date+Interval.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		2846A2F42091AF73005DC022 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -198,6 +208,7 @@
 		E7FB7C7B2050CCB000ADAF7B /* InterviewMe */ = {
 			isa = PBXGroup;
 			children = (
+				2834588320A2C37500EFBACC /* Extensions */,
 				2846A2F42091AF73005DC022 /* Views */,
 				28CC5D2F206B358D007B269A /* Classes */,
 				28CC5D29206B25ED007B269A /* ViewControllers */,
@@ -535,6 +546,7 @@
 				3D95943320716B3400BCEECF /* Post.swift in Sources */,
 				28D6E2F220895EF000D119D6 /* Comment.swift in Sources */,
 				282E2F51207AB6CD00BF169A /* ComposeViewController.swift in Sources */,
+				2834588520A2C39B00EFBACC /* Date+Interval.swift in Sources */,
 				2872885A2075CBF80044D89F /* SettingsTableViewController.swift in Sources */,
 				287288522075BCA90044D89F /* ProfileViewController.swift in Sources */,
 				3D95943720716C9700BCEECF /* FeedViewController.swift in Sources */,

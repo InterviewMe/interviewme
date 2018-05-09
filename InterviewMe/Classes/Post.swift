@@ -52,6 +52,6 @@ class Post: PFObject, PFSubclassing {
         formatter.dateFormat = "M/d/yy";
         let myStr : String = formatter.string(from: NSDate.init(timeIntervalSinceNow: 0) as Date);
         post.date = myStr
-        post.saveInBackground()
+        post.saveInBackground(block: completion)
     }
 }
