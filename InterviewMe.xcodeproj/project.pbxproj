@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2824459020A3CFB800089534 /* CommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2824458F20A3CFB800089534 /* CommentCell.swift */; };
+		2824459220A3D3A400089534 /* DetailPostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2824459120A3D3A400089534 /* DetailPostCell.swift */; };
+		2824459420A3D8CC00089534 /* PostDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2824459320A3D8CC00089534 /* PostDetailViewController.swift */; };
 		282E2F51207AB6CD00BF169A /* ComposeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282E2F50207AB6CD00BF169A /* ComposeViewController.swift */; };
 		2834588520A2C39B00EFBACC /* Date+Interval.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2834588420A2C39B00EFBACC /* Date+Interval.swift */; };
 		2846A2F62091AF88005DC022 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2846A2F52091AF88005DC022 /* CardView.swift */; };
@@ -18,7 +21,6 @@
 		28CC5D2D206B260E007B269A /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28CC5D2C206B260E007B269A /* SignUpViewController.swift */; };
 		28CC5D33206B3A11007B269A /* UserAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28CC5D32206B3A11007B269A /* UserAccount.swift */; };
 		28D6E2F220895EF000D119D6 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D6E2F120895EF000D119D6 /* Comment.swift */; };
-		3D902A57208971FE00E04BDB /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D902A56208971FE00E04BDB /* DetailViewController.swift */; };
 		3D95943320716B3400BCEECF /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D95943220716B3400BCEECF /* Post.swift */; };
 		3D95943520716BF100BCEECF /* JobCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D95943420716BF100BCEECF /* JobCell.swift */; };
 		3D95943720716C9700BCEECF /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D95943620716C9700BCEECF /* FeedViewController.swift */; };
@@ -54,6 +56,9 @@
 /* Begin PBXFileReference section */
 		008A9B2573E5BEC7CD28952A /* Pods-InterviewMe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InterviewMe.release.xcconfig"; path = "Pods/Target Support Files/Pods-InterviewMe/Pods-InterviewMe.release.xcconfig"; sourceTree = "<group>"; };
 		04CD1F60D11C465599F5C745 /* Pods-InterviewMe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InterviewMe.debug.xcconfig"; path = "Pods/Target Support Files/Pods-InterviewMe/Pods-InterviewMe.debug.xcconfig"; sourceTree = "<group>"; };
+		2824458F20A3CFB800089534 /* CommentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentCell.swift; sourceTree = "<group>"; };
+		2824459120A3D3A400089534 /* DetailPostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPostCell.swift; sourceTree = "<group>"; };
+		2824459320A3D8CC00089534 /* PostDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailViewController.swift; sourceTree = "<group>"; };
 		282E2F50207AB6CD00BF169A /* ComposeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposeViewController.swift; sourceTree = "<group>"; };
 		2834588420A2C39B00EFBACC /* Date+Interval.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Interval.swift"; sourceTree = "<group>"; };
 		2846A2F52091AF88005DC022 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
@@ -66,7 +71,6 @@
 		28CC5D32206B3A11007B269A /* UserAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAccount.swift; sourceTree = "<group>"; };
 		28D6E2F120895EF000D119D6 /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		388EA43B736160D5DF9FE723 /* Pods-InterviewMeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InterviewMeTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-InterviewMeTests/Pods-InterviewMeTests.release.xcconfig"; sourceTree = "<group>"; };
-		3D902A56208971FE00E04BDB /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		3D95943220716B3400BCEECF /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		3D95943420716BF100BCEECF /* JobCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = JobCell.swift; path = InterviewMe/Views/JobCell.swift; sourceTree = SOURCE_ROOT; };
 		3D95943620716C9700BCEECF /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
@@ -132,6 +136,8 @@
 			children = (
 				3D95943420716BF100BCEECF /* JobCell.swift */,
 				2846A2F52091AF88005DC022 /* CardView.swift */,
+				2824458F20A3CFB800089534 /* CommentCell.swift */,
+				2824459120A3D3A400089534 /* DetailPostCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -142,12 +148,12 @@
 				28CC5D2A206B2602007B269A /* LoginViewController.swift */,
 				28CC5D2C206B260E007B269A /* SignUpViewController.swift */,
 				3D95943620716C9700BCEECF /* FeedViewController.swift */,
+				2824459320A3D8CC00089534 /* PostDetailViewController.swift */,
+				E7B69109208D98BF00E25DE1 /* CommentViewController.swift */,
 				287288512075BCA80044D89F /* ProfileViewController.swift */,
 				28B821C22080278B00B03890 /* EditProfileViewController.swift */,
 				287288592075CBF80044D89F /* SettingsTableViewController.swift */,
 				282E2F50207AB6CD00BF169A /* ComposeViewController.swift */,
-				3D902A56208971FE00E04BDB /* DetailViewController.swift */,
-				E7B69109208D98BF00E25DE1 /* CommentViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -538,10 +544,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				E7B6910A208D98BF00E25DE1 /* CommentViewController.swift in Sources */,
-				3D902A57208971FE00E04BDB /* DetailViewController.swift in Sources */,
 				28B821C32080278B00B03890 /* EditProfileViewController.swift in Sources */,
+				2824459220A3D3A400089534 /* DetailPostCell.swift in Sources */,
 				28CC5D2B206B2602007B269A /* LoginViewController.swift in Sources */,
 				2846A2F62091AF88005DC022 /* CardView.swift in Sources */,
+				2824459020A3CFB800089534 /* CommentCell.swift in Sources */,
 				3D95943520716BF100BCEECF /* JobCell.swift in Sources */,
 				28CC5D2D206B260E007B269A /* SignUpViewController.swift in Sources */,
 				E7FB7C7D2050CCB000ADAF7B /* AppDelegate.swift in Sources */,
@@ -552,6 +559,7 @@
 				2834588520A2C39B00EFBACC /* Date+Interval.swift in Sources */,
 				2872885A2075CBF80044D89F /* SettingsTableViewController.swift in Sources */,
 				287288522075BCA90044D89F /* ProfileViewController.swift in Sources */,
+				2824459420A3D8CC00089534 /* PostDetailViewController.swift in Sources */,
 				3D95943720716C9700BCEECF /* FeedViewController.swift in Sources */,
 				28CB4C0820A355FD00C5B0F2 /* ColorScheme.swift in Sources */,
 			);

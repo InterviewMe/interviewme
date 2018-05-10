@@ -164,14 +164,11 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
             
         } else {
             // No user found, set default username
-            cell.name.text = "gooby"
-            cell.postText.text = post["text"] as? String
-      
+            cell.name.text = "Couldn't retrieve name"
         }
     
         return cell
     }
-  
   
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -183,11 +180,11 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         // Pass the selected object to the new view controller.
         if(segue.identifier == "PostDetailSegue"){
             let cell = sender as! JobCell
-            let detailViewController = segue.destination as! DetailViewController
+            let PostDetailViewController = segue.destination as! PostDetailViewController
             
             if let indexPath = tableView.indexPath(for: cell)
             {
-                detailViewController.post = posts[indexPath.row]
+                PostDetailViewController.post = posts[indexPath.row] as! Post
             }
         }
     

@@ -32,11 +32,10 @@ import Parse
 class CommentViewController: UIViewController {
   
   @IBOutlet weak var comment: UITextView!
-  var post: Post?
+  var post: Post!
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    
     // Do any additional setup after loading the view.
   }
   @IBAction func comment(_ sender: Any) {

@@ -17,6 +17,13 @@ The following **stretch** features are implemented:
 
 - [x] User login is persisted across restarts
 - [x] Style individual view controllers
+- [x] User can like and unlike posts
+- [x] User can comment on posts
+
+
+
+Things to do:
+- [ ] Update the retrieval of username objects. Just cast the PFobjects as UserAccounts 
 
 
 Database Schema:

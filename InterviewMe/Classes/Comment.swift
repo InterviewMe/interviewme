@@ -50,6 +50,7 @@ class Comment: PFObject, PFSubclassing {
         comment.saveInBackground(block: completion)
         
         let query = PFQuery(className: "Post")
+        print(post)
         query.getObjectInBackground(withId: (post?.objectId)!) {
             (postObject: PFObject?, error: Error?) -> Void in
             if error != nil {
