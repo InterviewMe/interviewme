@@ -64,8 +64,9 @@ class JobCell: UITableViewCell {
                 } else if let postObject = postObject {
                     
                     self.post.like_list.remove(at: self.post.like_list.index(of: (UserAccount.current()!.value(forKey: "objectId")! as! String))!)
+                    self.post.like_count -= 1
                     postObject["like_list"] = self.post.like_list
-                    postObject["like_count"] = Int(self.likeCount.text!)! - 1
+                    postObject["like_count"] = self.post.like_count
                     postObject.saveInBackground()
                     
                     // update UI
@@ -83,8 +84,9 @@ class JobCell: UITableViewCell {
                     print(error ?? "crap")
                 } else if let postObject = postObject {
                     self.post.like_list.append(UserAccount.current()!.value(forKey: "objectId")! as! String)
+                    self.post.like_count += 1
                     postObject["like_list"] = self.post.like_list
-                    postObject["like_count"] = Int(self.likeCount.text!)! + 1
+                    postObject["like_count"] = self.post.like_count
                     postObject.saveInBackground()
                     
                     // update UI

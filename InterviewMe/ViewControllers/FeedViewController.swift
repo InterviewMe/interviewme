@@ -54,6 +54,10 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         tableView.insertSubview(refreshControl, at: 0);
         updateMessage()
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        updateMessage()
+    }
   
     @IBAction func composeButton(_ sender: Any) {
     }

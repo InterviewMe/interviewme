@@ -98,16 +98,52 @@ class PostDetailViewController: UITableViewController {
         } else if indexPath.row == 1 {
             // cell returns comment label separator
             let cell = tableView.dequeueReusableCell(withIdentifier: "CommentLabel", for: indexPath)
-            
+
             return cell
         } else {
             // cell returns comments for post
             let cell = tableView.dequeueReusableCell(withIdentifier: "CommentCell", for: indexPath) as! CommentCell
-            let commentList = post.comment_list
-            cell.commentText.text = commentList[indexPath.row - 2].text
-            cell.name.text = (commentList[indexPath.row - 2].user as! UserAccount).first_name + (commentList[indexPath.row - 2].user as! UserAccount).last_name
+            
+            // comment query
+            let commentPointer = post.comment_list[indexPath.row - 2]
+            let commentId = commentPointer.value(forKey: "objectId") as! String
+            let commentQuery = Comment.query()
+            commentQuery?.getObjectInBackground(withId: commentId) {
+                (commentObject: PFObject?, error: Error?) -> Void in
+                if error == nil {
+                    cell.commentText.text = commentObject?.value(forKey: "text") as? String
+                    
+                    // comment query
+                    let userPointer = commentObject?.value(forKey: "user") as! UserAccount
+                    let userId = userPointer.value(forKey: "objectId") as! String
+                    let userQuery = UserAccount.query()
+                    userQuery?.getObjectInBackground(withId: userId) {
+                        (userObject: PFObject?, error: Error?) -> Void in
+                        if error == nil {
+                            // user query
+                            cell.name.text = (userObject?.value(forKey: "first_name") as? String)! + (userObject?.value(forKey: "last_name") as! String)
+                            // get profile image
+                            let profileImagePFFile = userObject?.value(forKey: "profile_image") as? PFFile
+                            profileImagePFFile?.getDataInBackground(block: { (imageData: Data!, error: Error!) ->
+                                Void in
+                                if (error == nil) {
+                                    
+                                    cell.profileImageView.image = UIImage(data:imageData)
+                                    
+                                }
+                            })
+                        }
+                    }
+                } else {
+                    // did not work
+                }
+            }
+            
+            /*
+            cell.commentText.text = (commentList[indexPath.row - 2] as! Comment).text
+            cell.name.text = ((commentList[indexPath.row - 2] as! Comment).user as! UserAccount).first_name + ((commentList[indexPath.row - 2] as! Comment).user as! UserAccount).last_name
             // get profile image
-            let profileImagePFFile = (commentList[indexPath.row - 2].user as! UserAccount).profile_image
+            let profileImagePFFile = ((commentList[indexPath.row - 2] as! Comment).user as! UserAccount).profile_image
             profileImagePFFile.getDataInBackground(block: { (imageData: Data!, error: Error!) ->
                 Void in
                 if (error == nil) {
@@ -115,7 +151,7 @@ class PostDetailViewController: UITableViewController {
                     cell.profileImageView.image = UIImage(data:imageData)
                     
                 }
-            })
+            })*/
             
             return cell
         }
