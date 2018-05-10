@@ -79,4 +79,10 @@ class SignUpViewController: UIViewController {
         
     }
     
+    // called when touches outside UI Text Field Element
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){
+        view.endEditing(true)
+        super.touchesBegan(touches, with: event)
+    }
+    
 }

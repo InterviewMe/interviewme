@@ -19,11 +19,13 @@ The following **stretch** features are implemented:
 - [x] Style individual view controllers
 - [x] User can like and unlike posts
 - [x] User can comment on posts
-
+- [ ] View other user's profiles
+- [ ] Dyanmic cells
 
 
 Things to do:
 - [ ] Update the retrieval of username objects. Just cast the PFobjects as UserAccounts 
+
 
 
 Database Schema:
@@ -38,9 +40,12 @@ columns: _id, User, text, date, reply_count, reply_array
 
 ## Video Walkthrough
 
-Here's a walkthrough of implemented user stories:
+Here's a link to our final walkthrough. Showcases minimal functionality.
+https://youtu.be/uoZf76zZJNI
 
-![InterviewMe Video Walkthrough](https://github.com/InterviewMe/interviewme/blob/master/interviewme6.gif)
+Here's a short gif walkthrough of implemented user stories:
+
+![InterviewMe Video Walkthrough](https://github.com/InterviewMe/interviewme/blob/master/interviewme7.gif)
 
 -GIF created with [LiceCap](http://www.cockos.com/licecap/).
 

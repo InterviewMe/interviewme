@@ -81,6 +81,7 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
                 userObject["username"] = self.emailLabel.text
                 userObject["biography"] = self.biographyTextField.text
                 userObject["profile_image"] = PFFile(name: "profile_image.png", data: UIImagePNGRepresentation(self.profileImageView.image!)!)
+                
                 userObject.saveInBackground()
 
             }
