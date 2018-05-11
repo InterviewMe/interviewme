@@ -19,11 +19,11 @@ The following **stretch** features are implemented:
 - [x] Style individual view controllers
 - [x] User can like and unlike posts
 - [x] User can comment on posts
-- [ ] View other user's profiles
-- [ ] Dyanmic cells
 
 
 Things to do:
+- [ ] Dynamic cell height
+- [ ] View other user's profiles
 - [ ] Update the retrieval of username objects. Just cast the PFobjects as UserAccounts 
 
 
