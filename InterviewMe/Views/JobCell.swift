@@ -30,7 +30,7 @@
 import UIKit
 import Parse
 
-class JobCell: UITableViewCell {
+class JobCell: UITableViewCell, updateLikeDelegate {
     
     // cell elements
     @IBOutlet weak var profileImageView: UIImageView!
@@ -99,6 +99,10 @@ class JobCell: UITableViewCell {
     }
     
     @IBAction func commentButton(_ sender: Any) {
+    }
+    
+    func updateLike(likeCount: Int) {
+        self.likeCount.text = String(likeCount)
     }
     
 }

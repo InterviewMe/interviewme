@@ -13,6 +13,8 @@ class PostDetailViewController: UITableViewController {
 
     var post: Post!
     
+    var likeDelegate: JobCell?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -39,6 +41,8 @@ class PostDetailViewController: UITableViewController {
                 usernameQuery?.getObjectInBackground(withId: usernameId) {
                     (usernameObject: PFObject?, error: Error?) -> Void in
                     if error == nil {
+                        // assign FeedViewController delegate
+                        cell.likeDelegate = self.likeDelegate
                         
                         let firstName = usernameObject?.value(forKey: "first_name") as? String
                         let lastName = usernameObject?.value(forKey: "last_name") as? String

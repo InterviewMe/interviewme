@@ -9,6 +9,10 @@
 import UIKit
 import Parse
 
+protocol updateLikeDelegate {
+    func updateLike(likeCount: Int)
+}
+
 class DetailPostCell: UITableViewCell {
 
     @IBOutlet weak var profileImageView: UIImageView!
@@ -19,6 +23,7 @@ class DetailPostCell: UITableViewCell {
     @IBOutlet weak var likeCount: UILabel!
     
     var post: Post!
+    var likeDelegate: JobCell?
     
     
     override func awakeFromNib() {
@@ -51,6 +56,8 @@ class DetailPostCell: UITableViewCell {
                     
                     // update UI
                     self.likeCount.text = String(postObject["like_count"] as! Int)
+                    // update UI for FeedView
+                    self.likeDelegate?.updateLike(likeCount: self.post.like_count)
                     
                     
                 }

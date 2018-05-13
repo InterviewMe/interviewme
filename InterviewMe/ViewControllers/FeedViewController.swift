@@ -54,10 +54,6 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         tableView.insertSubview(refreshControl, at: 0);
         updateMessage()
     }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        updateMessage()
-    }
   
     @IBAction func composeButton(_ sender: Any) {
     }
@@ -189,6 +185,7 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
             if let indexPath = tableView.indexPath(for: cell)
             {
                 PostDetailViewController.post = posts[indexPath.row] as! Post
+                PostDetailViewController.likeDelegate = tableView.cellForRow(at: indexPath) as? JobCell
             }
         }
     
