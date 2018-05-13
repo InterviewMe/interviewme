@@ -13,7 +13,7 @@ class PostDetailViewController: UITableViewController {
 
     var post: Post!
     
-    var likeDelegate: JobCell?
+    var likeDelegate: PostCell?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,7 +31,7 @@ class PostDetailViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row == 0 {
             // cell returns post cell
-            let cell = tableView.dequeueReusableCell(withIdentifier: "DetailPostCell", for: indexPath) as! DetailPostCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: "PostDetailCell", for: indexPath) as! PostDetailCell
             
             if post.user != nil {
                 // User found! update username label with username
@@ -142,20 +142,6 @@ class PostDetailViewController: UITableViewController {
                     // did not work
                 }
             }
-            
-            /*
-            cell.commentText.text = (commentList[indexPath.row - 2] as! Comment).text
-            cell.name.text = ((commentList[indexPath.row - 2] as! Comment).user as! UserAccount).first_name + ((commentList[indexPath.row - 2] as! Comment).user as! UserAccount).last_name
-            // get profile image
-            let profileImagePFFile = ((commentList[indexPath.row - 2] as! Comment).user as! UserAccount).profile_image
-            profileImagePFFile.getDataInBackground(block: { (imageData: Data!, error: Error!) ->
-                Void in
-                if (error == nil) {
-                    
-                    cell.profileImageView.image = UIImage(data:imageData)
-                    
-                }
-            })*/
             
             return cell
         }

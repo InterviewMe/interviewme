@@ -100,12 +100,12 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
   
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "JobCell", for: indexPath) as! JobCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "PostCell", for: indexPath) as! PostCell
         let post = posts[indexPath.row]
     
         if post["user"] != nil {
             // User found! update username label with username
-            let usernamePointer = post.value(forKey: "user") as! PFUser
+            let usernamePointer = post.value(forKey: "user") as! UserAccount
             let usernameId = usernamePointer.value(forKey: "objectId") as! String
             let usernameQuery = PFUser.query()
             usernameQuery?.getObjectInBackground(withId: usernameId) {
@@ -179,13 +179,13 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
         if(segue.identifier == "PostDetailSegue"){
-            let cell = sender as! JobCell
+            let cell = sender as! PostCell
             let PostDetailViewController = segue.destination as! PostDetailViewController
             
             if let indexPath = tableView.indexPath(for: cell)
             {
                 PostDetailViewController.post = posts[indexPath.row] as! Post
-                PostDetailViewController.likeDelegate = tableView.cellForRow(at: indexPath) as? JobCell
+                PostDetailViewController.likeDelegate = tableView.cellForRow(at: indexPath) as? PostCell
             }
         }
     

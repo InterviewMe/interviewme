@@ -24,19 +24,6 @@ The following **stretch** features are implemented:
 Things to do:
 - [ ] Dynamic cell height
 - [ ] View other user's profiles
-- [ ] Update the retrieval of username objects. Just cast the PFobjects as UserAccounts 
-
-
-
-Database Schema:
-
-table: User
-columns: _id, email, username, last_name, first_name, hashed_password, bio, job_title, profile_url, school, major
-
-table: Post
-columns: _id, User, text, date, reply_count, reply_array
-
-
 
 ## Video Walkthrough
 
