@@ -13,6 +13,7 @@
 		282E2F51207AB6CD00BF169A /* ComposeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282E2F50207AB6CD00BF169A /* ComposeViewController.swift */; };
 		2834588520A2C39B00EFBACC /* Date+Interval.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2834588420A2C39B00EFBACC /* Date+Interval.swift */; };
 		2846A2F62091AF88005DC022 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2846A2F52091AF88005DC022 /* CardView.swift */; };
+		2859B42820AA40A500CC93AB /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2859B42720AA40A500CC93AB /* PostCell.swift */; };
 		287288522075BCA90044D89F /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287288512075BCA80044D89F /* ProfileViewController.swift */; };
 		2872885A2075CBF80044D89F /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287288592075CBF80044D89F /* SettingsTableViewController.swift */; };
 		28B821C32080278B00B03890 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B821C22080278B00B03890 /* EditProfileViewController.swift */; };
@@ -22,7 +23,6 @@
 		28CC5D33206B3A11007B269A /* UserAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28CC5D32206B3A11007B269A /* UserAccount.swift */; };
 		28D6E2F220895EF000D119D6 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D6E2F120895EF000D119D6 /* Comment.swift */; };
 		3D95943320716B3400BCEECF /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D95943220716B3400BCEECF /* Post.swift */; };
-		3D95943520716BF100BCEECF /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D95943420716BF100BCEECF /* PostCell.swift */; };
 		3D95943720716C9700BCEECF /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D95943620716C9700BCEECF /* FeedViewController.swift */; };
 		58A4AE022FA53CEB86DE001A /* Pods_InterviewMe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D99AC14E4223C8C55D7E396 /* Pods_InterviewMe.framework */; };
 		C408F146D7EC44A2AA8028A5 /* Pods_InterviewMeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7839368BFB181948D6460265 /* Pods_InterviewMeTests.framework */; };
@@ -62,6 +62,7 @@
 		282E2F50207AB6CD00BF169A /* ComposeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposeViewController.swift; sourceTree = "<group>"; };
 		2834588420A2C39B00EFBACC /* Date+Interval.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Interval.swift"; sourceTree = "<group>"; };
 		2846A2F52091AF88005DC022 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		2859B42720AA40A500CC93AB /* PostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
 		287288512075BCA80044D89F /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		287288592075CBF80044D89F /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		28B821C22080278B00B03890 /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
@@ -72,7 +73,6 @@
 		28D6E2F120895EF000D119D6 /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		388EA43B736160D5DF9FE723 /* Pods-InterviewMeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InterviewMeTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-InterviewMeTests/Pods-InterviewMeTests.release.xcconfig"; sourceTree = "<group>"; };
 		3D95943220716B3400BCEECF /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
-		3D95943420716BF100BCEECF /* PostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PostCell.swift; path = InterviewMe/Views/PostCell.swift; sourceTree = SOURCE_ROOT; };
 		3D95943620716C9700BCEECF /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		536A309ED4C1A87D9A8A9C60 /* Pods-InterviewMeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InterviewMeUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-InterviewMeUITests/Pods-InterviewMeUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		7839368BFB181948D6460265 /* Pods_InterviewMeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InterviewMeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -134,10 +134,10 @@
 		2846A2F42091AF73005DC022 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				3D95943420716BF100BCEECF /* PostCell.swift */,
 				2846A2F52091AF88005DC022 /* CardView.swift */,
 				2824458F20A3CFB800089534 /* CommentCell.swift */,
 				2824459120A3D3A400089534 /* PostDetailCell.swift */,
+				2859B42720AA40A500CC93AB /* PostCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -557,13 +557,13 @@
 				28CC5D2B206B2602007B269A /* LoginViewController.swift in Sources */,
 				2846A2F62091AF88005DC022 /* CardView.swift in Sources */,
 				2824459020A3CFB800089534 /* CommentCell.swift in Sources */,
-				3D95943520716BF100BCEECF /* PostCell.swift in Sources */,
 				28CC5D2D206B260E007B269A /* SignUpViewController.swift in Sources */,
 				E7FB7C7D2050CCB000ADAF7B /* AppDelegate.swift in Sources */,
 				28CC5D33206B3A11007B269A /* UserAccount.swift in Sources */,
 				3D95943320716B3400BCEECF /* Post.swift in Sources */,
 				28D6E2F220895EF000D119D6 /* Comment.swift in Sources */,
 				282E2F51207AB6CD00BF169A /* ComposeViewController.swift in Sources */,
+				2859B42820AA40A500CC93AB /* PostCell.swift in Sources */,
 				2834588520A2C39B00EFBACC /* Date+Interval.swift in Sources */,
 				2872885A2075CBF80044D89F /* SettingsTableViewController.swift in Sources */,
 				287288522075BCA90044D89F /* ProfileViewController.swift in Sources */,

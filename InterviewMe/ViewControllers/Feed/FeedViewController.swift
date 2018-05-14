@@ -47,6 +47,10 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         tableView.delegate = self
         tableView.dataSource = self
         
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 170
+        tableView.reloadData()
+        
     
         // refresh
         refreshControl = UIRefreshControl()
@@ -75,7 +79,7 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
             // do something with the data fetched
             self.posts = posts!
             self.tableView.reloadData()
-            self.refreshControl.endRefreshing();
+            self.refreshControl.endRefreshing()
           } else {
             // handle error
           }
@@ -92,12 +96,12 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
     
         return posts.count;
     }
-    
+    /*
     // This is just for display purpose. NEEDS TO BE DELTED once dynamic cell height is implemented
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
     {
         return 300.0;//Choose your custom row height
-    }
+    }*/
   
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "PostCell", for: indexPath) as! PostCell

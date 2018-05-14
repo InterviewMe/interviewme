@@ -52,7 +52,7 @@ class PostCell: UITableViewCell, updateLikeDelegate {
     }
     
     @IBAction func likeButton(_ sender: Any) {
-
+        
         if post.like_list.contains(UserAccount.current()!.value(forKey: "objectId")! as! String) {
             // unlike post
             let query = PFQuery(className: "Post")
