@@ -49,7 +49,6 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 170
-        tableView.reloadData()
         
     
         // refresh

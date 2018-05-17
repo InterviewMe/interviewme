@@ -17,6 +17,9 @@ class PostDetailViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.tableView.rowHeight = UITableViewAutomaticDimension
+        self.tableView.estimatedRowHeight = 170
     }
     
     override func didReceiveMemoryWarning() {
@@ -125,7 +128,7 @@ class PostDetailViewController: UITableViewController {
                         (userObject: PFObject?, error: Error?) -> Void in
                         if error == nil {
                             // user query
-                            cell.name.text = (userObject?.value(forKey: "first_name") as? String)! + (userObject?.value(forKey: "last_name") as! String)
+                            cell.name.text = (userObject?.value(forKey: "first_name") as? String)! + " " + (userObject?.value(forKey: "last_name") as! String)
                             // get profile image
                             let profileImagePFFile = userObject?.value(forKey: "profile_image") as? PFFile
                             profileImagePFFile?.getDataInBackground(block: { (imageData: Data!, error: Error!) ->
