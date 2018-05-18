@@ -20,6 +20,11 @@ class PostDetailViewController: UITableViewController {
         
         self.tableView.rowHeight = UITableViewAutomaticDimension
         self.tableView.estimatedRowHeight = 170
+        
+        // There was a big issue here in that Swift performs other functions before the Parse query is finished.
+        // As a result, the tableview reloads before all the data is here.
+        // The delay mitigates the issue
+        tableView.reloadDataAfterDelay(delayTime: 0.5)
     }
     
     override func didReceiveMemoryWarning() {

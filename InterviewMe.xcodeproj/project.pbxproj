@@ -22,6 +22,7 @@
 		28CC5D2D206B260E007B269A /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28CC5D2C206B260E007B269A /* SignUpViewController.swift */; };
 		28CC5D33206B3A11007B269A /* UserAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28CC5D32206B3A11007B269A /* UserAccount.swift */; };
 		28D6E2F220895EF000D119D6 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D6E2F120895EF000D119D6 /* Comment.swift */; };
+		28F7F2D420AF88D200380FBE /* UITableView+ReloadDelay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28F7F2D320AF88D200380FBE /* UITableView+ReloadDelay.swift */; };
 		3D95943320716B3400BCEECF /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D95943220716B3400BCEECF /* Post.swift */; };
 		3D95943720716C9700BCEECF /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D95943620716C9700BCEECF /* FeedViewController.swift */; };
 		58A4AE022FA53CEB86DE001A /* Pods_InterviewMe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D99AC14E4223C8C55D7E396 /* Pods_InterviewMe.framework */; };
@@ -71,6 +72,7 @@
 		28CC5D2C206B260E007B269A /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		28CC5D32206B3A11007B269A /* UserAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAccount.swift; sourceTree = "<group>"; };
 		28D6E2F120895EF000D119D6 /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
+		28F7F2D320AF88D200380FBE /* UITableView+ReloadDelay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+ReloadDelay.swift"; sourceTree = "<group>"; };
 		388EA43B736160D5DF9FE723 /* Pods-InterviewMeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InterviewMeTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-InterviewMeTests/Pods-InterviewMeTests.release.xcconfig"; sourceTree = "<group>"; };
 		3D95943220716B3400BCEECF /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		3D95943620716C9700BCEECF /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
@@ -127,6 +129,7 @@
 			isa = PBXGroup;
 			children = (
 				2834588420A2C39B00EFBACC /* Date+Interval.swift */,
+				28F7F2D320AF88D200380FBE /* UITableView+ReloadDelay.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -557,6 +560,7 @@
 				28CC5D2B206B2602007B269A /* LoginViewController.swift in Sources */,
 				2846A2F62091AF88005DC022 /* CardView.swift in Sources */,
 				2824459020A3CFB800089534 /* CommentCell.swift in Sources */,
+				28F7F2D420AF88D200380FBE /* UITableView+ReloadDelay.swift in Sources */,
 				28CC5D2D206B260E007B269A /* SignUpViewController.swift in Sources */,
 				E7FB7C7D2050CCB000ADAF7B /* AppDelegate.swift in Sources */,
 				28CC5D33206B3A11007B269A /* UserAccount.swift in Sources */,
