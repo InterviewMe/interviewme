@@ -35,8 +35,24 @@ class UserAccount: PFUser {
     @NSManaged var biography: String?
     @NSManaged var profile_image: PFFile
     @NSManaged var city: String
+    @NSManaged var current_position: String?
     
     class func createAccount(email: String, password: String, first_name: String, last_name: String, withCompletion completion: PFBooleanResultBlock?) {
-        // will migrate code to here later
+        
+        // set user properties
+        let newUserAccount = UserAccount()
+        newUserAccount.last_name = last_name
+        newUserAccount.first_name = first_name
+        newUserAccount.username = email
+        newUserAccount.email = email
+        newUserAccount.password = password
+        
+        newUserAccount.biography = ""
+        newUserAccount.current_position = "Student"
+        newUserAccount.city = "???"
+        newUserAccount.profile_image = PFFile(name: "profile_image.png", data: UIImagePNGRepresentation(UIImage(named: "noprofileimage")!)!)!
+        
+        // sign up function for PFUser
+        newUserAccount.signUpInBackground(block: completion)
     }
 }

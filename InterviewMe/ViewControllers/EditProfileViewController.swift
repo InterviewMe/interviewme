@@ -29,64 +29,56 @@
 import UIKit
 import Parse
 
-class EditProfileViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-
-    @IBOutlet weak var profileImageView: UIImageView!
+class EditProfileViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UINavigationBarDelegate {
     
-    @IBOutlet weak var firstNameLabel: UITextField!
-    
-    @IBOutlet weak var lastNameLabel: UITextField!
-    
-    @IBOutlet weak var emailLabel: UITextField!
-    
-    @IBOutlet weak var biographyTextField: UITextView!
+    @IBOutlet weak var tableview: UITableView!
+    @IBOutlet weak var navigationBar: UINavigationBar!
     
     var user = UserAccount.current()!
+    var userAccountInfoCell: EditProfileCell?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        user = try! UserAccount.current()!.fetch()
-        updateInfo()
         
-        // tap to edit profile view
-        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)))
-        profileImageView.isUserInteractionEnabled = true
-        profileImageView.addGestureRecognizer(tapGestureRecognizer)
-    }
+        tableview.delegate = self
+        tableview.dataSource = self
+        navigationBar.delegate = self
+        
+        user = try! UserAccount.current()!.fetch()
 
-  
-  @IBAction func didTapBackground(_ sender: Any) {
-    firstNameLabel.endEditing(true)
-    lastNameLabel.endEditing(true)
-    emailLabel.endEditing(true)
-    biographyTextField.endEditing(true)
-    view.endEditing(true)
-  }
-  
+    }
   
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
     
-    @IBAction func saveButton(_ sender: Any) {
-        let query = PFQuery(className:"_User")
-        query.getObjectInBackground(withId: user.objectId!) {
-            (userObject: PFObject?, error: Error?) -> Void in
-            if error != nil {
-                print(error ?? "crap")
-            } else if let userObject = userObject {
-                userObject["first_name"] = self.firstNameLabel.text
-                userObject["last_name"] = self.lastNameLabel.text
-                userObject["email"] = self.emailLabel.text
-                userObject["username"] = self.emailLabel.text
-                userObject["biography"] = self.biographyTextField.text
-                userObject["profile_image"] = PFFile(name: "profile_image.png", data: UIImagePNGRepresentation(self.profileImageView.image!)!)
-                
-                userObject.saveInBackground()
-
-            }
-        }
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableview.dequeueReusableCell(withIdentifier: "EditProfileCell") as! EditProfileCell
+        userAccountInfoCell = cell
         
+        // tap to edit profile view
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)))
+        cell.profileImageView.isUserInteractionEnabled = true
+        cell.profileImageView.addGestureRecognizer(tapGestureRecognizer)
+        
+        cell.firstNameLabel.text = user.first_name
+        cell.lastNameLabel.text = user.last_name
+        cell.emailLabel.text = user.email
+        cell.biographyTextField.text = user.biography ?? ""
+        cell.cityLabel.text = user.city
+        cell.currentPositionLabel.text = user.current_position
+        user.profile_image.getDataInBackground(block: {
+            (imageData: Data!, error: Error!) -> Void in
+            if (error == nil) {
+                cell.profileImageView.image = UIImage(data:imageData)
+                
+            }
+        })
+        return cell
     }
     
     @objc func imageTapped(tapGestureRecognizer: UITapGestureRecognizer)
@@ -107,24 +99,45 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
         let originalImage = info[UIImagePickerControllerOriginalImage] as! UIImage
         
         // Do something with the images (based on your use case)
-        profileImageView.image = originalImage
+        userAccountInfoCell?.profileImageView.image = originalImage
         
         // Dismiss UIImagePickerController to go back to your original view controller
-        dismiss(animated: true, completion: nil)
+        self.dismiss(animated: true, completion: nil)
+    }
+
+    
+    @IBAction func saveButton(_ sender: Any) {
+        let query = PFQuery(className:"_User")
+        let cell = userAccountInfoCell!
+        query.getObjectInBackground(withId: user.objectId!) {
+            (userObject: PFObject?, error: Error?) -> Void in
+            if error != nil {
+                print(error ?? "crap")
+            } else if let userObject = userObject {
+                userObject["first_name"] = cell.firstNameLabel.text
+                userObject["last_name"] = cell.lastNameLabel.text
+                userObject["email"] = cell.emailLabel.text
+                userObject["username"] = cell.emailLabel.text
+                userObject["biography"] = cell.biographyTextField.text
+                userObject["city"] = cell.cityLabel.text
+                userObject["current_position"] = cell.currentPositionLabel.text
+                userObject["profile_image"] = PFFile(name: "profile_image.png", data: UIImagePNGRepresentation(cell.profileImageView.image!)!)
+                
+                userObject.saveInBackground()
+
+            }
+        }
+        
     }
     
-    func updateInfo() {
-        firstNameLabel.text = user.first_name
-        lastNameLabel.text = user.last_name
-        emailLabel.text = user.email
-        biographyTextField.text = user.biography ?? ""
-        user.profile_image.getDataInBackground(block: {
-            (imageData: Data!, error: Error!) -> Void in
-            if (error == nil) {
-                self.profileImageView.image = UIImage(data:imageData)
-                
-            }
-        })
+    @IBAction func cancelButton(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
     }
+    
+    // UI custom navigation bar auto correct for status bar
+    public func position(for bar: UIBarPositioning) -> UIBarPosition {
+        return .topAttached
+    }
+    
     
 }

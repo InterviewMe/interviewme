@@ -56,26 +56,17 @@ class SignUpViewController: UIViewController {
     }
 
     @IBAction func signUpButton(_ sender: Any) {
-
-        // set user properties
-        let newUserAccount = UserAccount()
-        newUserAccount.first_name = self.firstNameTextField.text!
-        newUserAccount.last_name = self.lastNameTextField.text!
-        newUserAccount.username = self.emailTextField.text!
-        newUserAccount.email = self.emailTextField.text!
-        newUserAccount.password = passwordTextField.text
-        newUserAccount.biography = ""
-        newUserAccount.profile_image = PFFile(name: "profile_image.png", data: UIImagePNGRepresentation(UIImage(named: "noprofileimage")!)!)!
- 
-        // sign up function for PFUser
-        newUserAccount.signUpInBackground { (success: Bool, error: Error?) in
-            if let error = error {
-                print(error)
-            } else {
-                self.dismiss(animated: true, completion: nil)
-            }
+        if !(firstNameTextField.text?.isEmpty)! && !(lastNameTextField.text?.isEmpty)! && !(emailTextField.text?.isEmpty)!
+            && !(passwordTextField.text?.isEmpty)! && !(confirmPasswordTextField.text?.isEmpty)! {
+            
+            UserAccount.createAccount(email: emailTextField.text!, password: passwordTextField.text!, first_name: firstNameTextField.text!, last_name: lastNameTextField.text!, withCompletion: { (succeeded, error) -> Void in
+                if succeeded {
+                    self.dismiss(animated: true, completion: nil)
+                } else {
+                    // tell user that the post failed
+                }
+            })
         }
-        
         
     }
     

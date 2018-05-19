@@ -75,6 +75,8 @@ class ProfileViewController: UIViewController {
         nameLabel.text = user.first_name + " " + user.last_name
         emailLabel.text = user.email
         biographyLabel.text = user.biography
+        cityLabel.text = user.city
+        currentPositionLabel.text = user.current_position
         
         user.profile_image.getDataInBackground(block: {
             (imageData: Data!, error: Error!) -> Void in

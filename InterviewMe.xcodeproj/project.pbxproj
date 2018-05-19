@@ -16,6 +16,7 @@
 		2859B42820AA40A500CC93AB /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2859B42720AA40A500CC93AB /* PostCell.swift */; };
 		287288522075BCA90044D89F /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287288512075BCA80044D89F /* ProfileViewController.swift */; };
 		2872885A2075CBF80044D89F /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287288592075CBF80044D89F /* SettingsTableViewController.swift */; };
+		28A60F4C20AFA1D100C91117 /* EditProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A60F4B20AFA1D100C91117 /* EditProfileCell.swift */; };
 		28B821C32080278B00B03890 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B821C22080278B00B03890 /* EditProfileViewController.swift */; };
 		28CB4C0820A355FD00C5B0F2 /* ColorScheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28CB4C0720A355FD00C5B0F2 /* ColorScheme.swift */; };
 		28CC5D2B206B2602007B269A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28CC5D2A206B2602007B269A /* LoginViewController.swift */; };
@@ -66,6 +67,7 @@
 		2859B42720AA40A500CC93AB /* PostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
 		287288512075BCA80044D89F /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		287288592075CBF80044D89F /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
+		28A60F4B20AFA1D100C91117 /* EditProfileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileCell.swift; sourceTree = "<group>"; };
 		28B821C22080278B00B03890 /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		28CB4C0720A355FD00C5B0F2 /* ColorScheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorScheme.swift; sourceTree = "<group>"; };
 		28CC5D2A206B2602007B269A /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -141,6 +143,7 @@
 				2824458F20A3CFB800089534 /* CommentCell.swift */,
 				2824459120A3D3A400089534 /* PostDetailCell.swift */,
 				2859B42720AA40A500CC93AB /* PostCell.swift */,
+				28A60F4B20AFA1D100C91117 /* EditProfileCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -563,6 +566,7 @@
 				28F7F2D420AF88D200380FBE /* UITableView+ReloadDelay.swift in Sources */,
 				28CC5D2D206B260E007B269A /* SignUpViewController.swift in Sources */,
 				E7FB7C7D2050CCB000ADAF7B /* AppDelegate.swift in Sources */,
+				28A60F4C20AFA1D100C91117 /* EditProfileCell.swift in Sources */,
 				28CC5D33206B3A11007B269A /* UserAccount.swift in Sources */,
 				3D95943320716B3400BCEECF /* Post.swift in Sources */,
 				28D6E2F220895EF000D119D6 /* Comment.swift in Sources */,

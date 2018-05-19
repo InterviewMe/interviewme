@@ -28,16 +28,18 @@
 
 import UIKit
 
-class ComposeViewController: UIViewController, UITextViewDelegate {
+class ComposeViewController: UIViewController, UITextViewDelegate, UINavigationBarDelegate {
 
     @IBOutlet weak var profileImageView: UIImageView!
-    
     @IBOutlet weak var postTextField: UITextView!
+    @IBOutlet weak var navigationBar: UINavigationBar!
     
     var user = UserAccount.current()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        navigationBar.delegate = self
         
         user?.profile_image.getDataInBackground(block: {
             (imageData: Data!, error: Error!) -> Void in
@@ -94,5 +96,10 @@ class ComposeViewController: UIViewController, UITextViewDelegate {
             postTextField.text = "Ask an interview/recruiting questions"
             postTextField.textColor = UIColor.lightGray
         }
+    }
+    
+    // UI custom navigation bar auto correct for status bar
+    public func position(for bar: UIBarPositioning) -> UIBarPosition {
+        return .topAttached
     }
 }
