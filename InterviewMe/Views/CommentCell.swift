@@ -13,6 +13,7 @@ class CommentCell: UITableViewCell {
     @IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var commentText: UILabel!
+    @IBOutlet weak var currentPositionLabel: UILabel!
     
     
     

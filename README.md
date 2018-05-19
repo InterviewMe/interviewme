@@ -19,10 +19,10 @@ The following **stretch** features are implemented:
 - [x] Style individual view controllers
 - [x] User can like and unlike posts
 - [x] User can comment on posts
+- [x] Dynamic cell height
 
 
 Things to do:
-- [ ] Dynamic cell height
 - [ ] View other user's profiles
 
 ## Video Walkthrough

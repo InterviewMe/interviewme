@@ -17,6 +17,7 @@ class PostDetailCell: UITableViewCell {
 
     @IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var name: UILabel!
+    @IBOutlet weak var currentPositionLabel: UILabel!
     @IBOutlet weak var date: UILabel!
     @IBOutlet weak var postText: UILabel!
     @IBOutlet weak var commentCount: UILabel!

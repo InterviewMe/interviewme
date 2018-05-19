@@ -260,6 +260,7 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="commentCount" destination="C0d-vs-jkM" id="y6I-Y2-G4F"/>
+                                    <outlet property="currentPositionLabel" destination="aCh-aS-rVF" id="w1d-1L-JBT"/>
                                     <outlet property="date" destination="5li-OM-Lwv" id="IG7-KH-ih8"/>
                                     <outlet property="likeCount" destination="eno-ct-hIh" id="EAU-PD-hOP"/>
                                     <outlet property="name" destination="WEh-cX-R50" id="UxQ-C6-U7b"/>
@@ -347,6 +348,7 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="commentText" destination="r3E-8Q-UoN" id="Iu0-Zk-3qc"/>
+                                    <outlet property="currentPositionLabel" destination="eVx-f9-bCJ" id="Lhr-Da-jum"/>
                                     <outlet property="name" destination="yaQ-sO-pOW" id="Lkf-lc-lep"/>
                                     <outlet property="profileImageView" destination="gHd-Pq-RXo" id="ENl-v8-Ijl"/>
                                 </connections>
@@ -561,6 +563,7 @@
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <outlet property="commentCount" destination="yAY-5q-BtE" id="rmm-5K-CGR"/>
+                                            <outlet property="currentPositionLabel" destination="56R-dx-D4E" id="ypu-63-suV"/>
                                             <outlet property="date" destination="I4a-IC-Q1f" id="kQi-BE-5zf"/>
                                             <outlet property="likeCount" destination="4Co-Zl-Peb" id="s4r-iO-f94"/>
                                             <outlet property="name" destination="foh-vw-423" id="bCO-ek-324"/>
@@ -770,13 +773,6 @@
                                     <constraint firstAttribute="height" constant="270" id="2xa-co-QBV"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="512-555-5555" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IB5-Pm-FyQ">
-                                <rect key="frame" x="28" y="628" width="114" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wun-5w-x5o">
                                 <rect key="frame" x="112" y="84" width="150" height="150"/>
                                 <constraints>
@@ -844,13 +840,6 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="my.email@email.com" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zab-Eq-gRw">
-                                        <rect key="frame" x="45" y="223" width="160" height="21"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -894,7 +883,6 @@
                         <outlet property="biographyLabel" destination="r9m-ZP-66D" id="JsO-aH-AUy"/>
                         <outlet property="cityLabel" destination="sEe-tn-Tzw" id="UYy-Id-63X"/>
                         <outlet property="currentPositionLabel" destination="UvZ-j7-kex" id="L4m-x7-r7x"/>
-                        <outlet property="emailLabel" destination="zab-Eq-gRw" id="3Xr-Mf-7FI"/>
                         <outlet property="nameLabel" destination="gEM-ab-Wrz" id="P8d-4t-E9Z"/>
                         <outlet property="profileImageView" destination="wun-5w-x5o" id="Aub-vG-aah"/>
                     </connections>

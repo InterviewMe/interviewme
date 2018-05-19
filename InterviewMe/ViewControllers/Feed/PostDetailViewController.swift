@@ -43,18 +43,19 @@ class PostDetailViewController: UITableViewController {
             
             if post.user != nil {
                 // User found! update username label with username
-                let usernamePointer = post.value(forKey: "user") as! PFUser
-                let usernameId = usernamePointer.value(forKey: "objectId") as! String
-                let usernameQuery = PFUser.query()
-                usernameQuery?.getObjectInBackground(withId: usernameId) {
-                    (usernameObject: PFObject?, error: Error?) -> Void in
+                let userPointer = post.value(forKey: "user") as! PFUser
+                let userId = userPointer.value(forKey: "objectId") as! String
+                let userQuery = PFUser.query()
+                userQuery?.getObjectInBackground(withId: userId) {
+                    (userObject: PFObject?, error: Error?) -> Void in
                     if error == nil {
                         // assign FeedViewController delegate
                         cell.likeDelegate = self.likeDelegate
                         
-                        let firstName = usernameObject?.value(forKey: "first_name") as? String
-                        let lastName = usernameObject?.value(forKey: "last_name") as? String
+                        let firstName = userObject?.value(forKey: "first_name") as? String
+                        let lastName = userObject?.value(forKey: "last_name") as? String
                         cell.name.text = firstName! + " " + lastName!
+                        cell.currentPositionLabel.text = userObject?.value(forKey: "current_position") as? String
                         
                         // create the interval between the post date and the current date
                         
@@ -74,7 +75,7 @@ class PostDetailViewController: UITableViewController {
                         }
                         
                         // get profile image
-                        let profileImagePFFile = usernameObject?.value(forKey: "profile_image") as? PFFile
+                        let profileImagePFFile = userObject?.value(forKey: "profile_image") as? PFFile
                         profileImagePFFile?.getDataInBackground(block: { (imageData: Data!, error: Error!) ->
                             Void in
                             if (error == nil) {
@@ -134,6 +135,7 @@ class PostDetailViewController: UITableViewController {
                         if error == nil {
                             // user query
                             cell.name.text = (userObject?.value(forKey: "first_name") as? String)! + " " + (userObject?.value(forKey: "last_name") as! String)
+                            cell.currentPositionLabel.text = userObject?.value(forKey: "current_position") as? String
                             // get profile image
                             let profileImagePFFile = userObject?.value(forKey: "profile_image") as? PFFile
                             profileImagePFFile?.getDataInBackground(block: { (imageData: Data!, error: Error!) ->

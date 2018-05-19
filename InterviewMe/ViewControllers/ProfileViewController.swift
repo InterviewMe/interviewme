@@ -32,15 +32,9 @@ import Parse
 class ProfileViewController: UIViewController {
 
     @IBOutlet weak var profileImageView: UIImageView!
-    
     @IBOutlet weak var nameLabel: UILabel!
-    
     @IBOutlet weak var currentPositionLabel: UILabel!
-    
-    @IBOutlet weak var emailLabel: UILabel!
-    
     @IBOutlet weak var biographyLabel: UILabel!
-    
     @IBOutlet weak var cityLabel: UILabel!
     
     
@@ -73,7 +67,6 @@ class ProfileViewController: UIViewController {
 
     func updateInfo() {
         nameLabel.text = user.first_name + " " + user.last_name
-        emailLabel.text = user.email
         biographyLabel.text = user.biography
         cityLabel.text = user.city
         currentPositionLabel.text = user.current_position

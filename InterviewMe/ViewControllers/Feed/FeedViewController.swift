@@ -118,6 +118,7 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
                     let firstName = usernameObject?.value(forKey: "first_name") as? String
                     let lastName = usernameObject?.value(forKey: "last_name") as? String
                     cell.name.text = firstName! + " " + lastName!
+                    cell.currentPositionLabel.text = usernameObject?.value(forKey: "current_position") as? String
             
                     // create the interval between the post date and the current date
             
