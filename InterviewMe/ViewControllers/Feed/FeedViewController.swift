@@ -29,14 +29,12 @@
 import UIKit
 import Parse
 
-class FeedViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-  
-    // tableView
+class FeedViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, PostCellDelegate {
   
     @IBOutlet weak var tableView: UITableView!
   
-  
     var posts: [PFObject] = []
+    var postUserAccount: UserAccount!
   
     // refresh
     var refreshControl: UIRefreshControl!
@@ -95,12 +93,6 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
     
         return posts.count;
     }
-    /*
-    // This is just for display purpose. NEEDS TO BE DELTED once dynamic cell height is implemented
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
-    {
-        return 300.0;//Choose your custom row height
-    }*/
   
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "PostCell", for: indexPath) as! PostCell
@@ -114,7 +106,8 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
             usernameQuery?.getObjectInBackground(withId: usernameId) {
                 (usernameObject: PFObject?, error: Error?) -> Void in
                 if error == nil {
-                
+                    
+                    cell.user = usernameObject as! UserAccount
                     let firstName = usernameObject?.value(forKey: "first_name") as? String
                     let lastName = usernameObject?.value(forKey: "last_name") as? String
                     cell.name.text = firstName! + " " + lastName!
@@ -143,23 +136,22 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
                         Void in
                         if (error == nil) {
                     
-                            cell.profileImageView.image = UIImage(data:imageData)
-                            
+                            cell.profileButtonOutlet.setImage(UIImage(data:imageData), for: .normal)
                         }
                     })
                     
-                    
                     // rounded corners for profile image
-                    cell.profileImageView.layer.borderWidth = 1
-                    cell.profileImageView.layer.masksToBounds = false
-                    cell.profileImageView.layer.borderWidth = 0
-                    cell.profileImageView.layer.cornerRadius = cell.profileImageView.frame.height / 2
-                    cell.profileImageView.clipsToBounds = true
+                    cell.profileButtonOutlet.layer.borderWidth = 1
+                    cell.profileButtonOutlet.layer.masksToBounds = false
+                    cell.profileButtonOutlet.layer.borderWidth = 0
+                    cell.profileButtonOutlet.layer.cornerRadius = 0.5 * cell.profileButtonOutlet.bounds.size.width
+                    cell.profileButtonOutlet.clipsToBounds = true
                     
                 } else {
                     print("Error in retrieving username: \(error!)")
                 }
             }
+            cell.delegate = self
             cell.postText.text = post["text"] as? String
             cell.commentCount.text = String(post["comment_count"] as! Int)
             cell.likeCount.text = String(post["like_count"] as! Int)
@@ -182,7 +174,7 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
-        if(segue.identifier == "PostDetailSegue"){
+        if (segue.identifier == "PostDetailSegue") {
             let cell = sender as! PostCell
             let PostDetailViewController = segue.destination as! PostDetailViewController
             
@@ -191,9 +183,19 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
                 PostDetailViewController.post = posts[indexPath.row] as! Post
                 PostDetailViewController.likeDelegate = tableView.cellForRow(at: indexPath) as? PostCell
             }
+        } else if (segue.identifier == "PostViewUserAccountSegue") {
+            let OtherProfileViewController = segue.destination as! OtherProfileViewController
+            OtherProfileViewController.user = self.postUserAccount
         }
     
     }
+    
+    // delegate methods for PostCellDelegate
+    func didTapProfileButton(user: UserAccount) {
+        self.postUserAccount = user
+        self.performSegue(withIdentifier: "PostViewUserAccountSegue", sender: nil)
+    }
+    
   
 }
 

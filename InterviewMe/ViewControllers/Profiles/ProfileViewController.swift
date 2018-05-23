@@ -29,29 +29,25 @@
 import UIKit
 import Parse
 
-class ProfileViewController: UIViewController {
-
-    @IBOutlet weak var profileImageView: UIImageView!
-    @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var currentPositionLabel: UILabel!
-    @IBOutlet weak var biographyLabel: UILabel!
-    @IBOutlet weak var cityLabel: UILabel!
+class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    
+    @IBOutlet weak var tableview: UITableView!
     
     var user = UserAccount.current()!
+    // refresh
+    var refreshControl: UIRefreshControl!
+    var cellDelegate: ProfileCell!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        updateInfo()
+        tableview.delegate = self
+        tableview.dataSource = self
         
-        // rounded corners for profile image
-        profileImageView.layer.borderWidth = 1
-        profileImageView.layer.masksToBounds = false
-        profileImageView.layer.borderWidth = 0
-        profileImageView.layer.cornerRadius = profileImageView.frame.height / 2
-        profileImageView.clipsToBounds = true
+        // refresh
+        refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector (FeedViewController.didPullToRefresh(_:)), for: .valueChanged)
+        tableview.insertSubview(refreshControl, at: 0);
     }
 
     override func didReceiveMemoryWarning() {
@@ -59,26 +55,41 @@ class ProfileViewController: UIViewController {
 
     }
     
-    override func viewDidAppear(_ animated: Bool) {
+    // pull to refresh
+    @objc func didPullToRefresh(_ refreshControl: UIRefreshControl){
         user = try! UserAccount.current()!.fetch()
         updateInfo()
-
+        refreshControl.endRefreshing()
     }
-
+    
+    override func viewDidAppear(_ animated: Bool) {
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ProfileCell") as! ProfileCell
+        cellDelegate = cell
+        updateInfo()
+        return cell
+    }
+    
     func updateInfo() {
-        nameLabel.text = user.first_name + " " + user.last_name
-        biographyLabel.text = user.biography
-        cityLabel.text = user.city
-        currentPositionLabel.text = user.current_position
+        cellDelegate.nameLabel.text = user.first_name + " " + user.last_name
+        cellDelegate.biographyLabel.text = user.biography
+        cellDelegate.cityLabel.text = user.city
+        cellDelegate.currentPositionLabel.text = user.current_position
         
         user.profile_image.getDataInBackground(block: {
             (imageData: Data!, error: Error!) -> Void in
             if (error == nil) {
-                self.profileImageView.image = UIImage(data:imageData)
+                self.cellDelegate.profileImageView.image = UIImage(data:imageData)
                 
             }
         })
     }
     
-
+    
 }

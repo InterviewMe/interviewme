@@ -29,10 +29,16 @@
 import UIKit
 import Parse
 
+protocol PostCellDelegate {
+    func didTapProfileButton(user: UserAccount)
+}
+
 class PostCell: UITableViewCell, updateLikeDelegate {
     
     // cell elements
-    @IBOutlet weak var profileImageView: UIImageView!
+
+    
+    @IBOutlet weak var profileButtonOutlet: UIButton!
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var currentPositionLabel: UILabel!
     @IBOutlet weak var date: UILabel!
@@ -41,6 +47,8 @@ class PostCell: UITableViewCell, updateLikeDelegate {
     @IBOutlet weak var likeCount: UILabel!
     
     var post: Post!
+    var user: UserAccount!
+    var delegate: PostCellDelegate!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -104,6 +112,11 @@ class PostCell: UITableViewCell, updateLikeDelegate {
     func updateLike(likeCount: Int) {
         self.likeCount.text = String(likeCount)
     }
+    
+    @IBAction func profileButton(_ sender: Any) {
+        delegate?.didTapProfileButton(user: user)
+    }
+    
     
 }
 

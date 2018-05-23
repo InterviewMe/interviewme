@@ -23,7 +23,10 @@ The following **stretch** features are implemented:
 
 
 Things to do:
-- [ ] View other user's profiles
+- [x] View other user's profiles
+- [ ] Direct messaging
+- [ ] Animation for likes
+- [x] Convert profile view controller to tableview
 
 ## Video Walkthrough
 
