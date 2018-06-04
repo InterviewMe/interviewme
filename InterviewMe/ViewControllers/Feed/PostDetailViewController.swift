@@ -24,7 +24,7 @@ class PostDetailViewController: UITableViewController {
         // There was a big issue here in that Swift performs other functions before the Parse query is finished.
         // As a result, the tableview reloads before all the data is here.
         // The delay mitigates the issue
-        tableView.reloadDataAfterDelay(delayTime: 0.25)
+        tableView.reloadDataAfterDelay(delayTime: 0.30)
     }
     
     override func didReceiveMemoryWarning() {

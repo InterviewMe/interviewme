@@ -22,14 +22,18 @@ class PostDetailCell: UITableViewCell {
     @IBOutlet weak var postText: UILabel!
     @IBOutlet weak var commentCount: UILabel!
     @IBOutlet weak var likeCount: UILabel!
+    @IBOutlet var moreButtonOptions: [UIButton]!
     
     var post: Post!
     var likeDelegate: PostCell?
-    
+    var optionsMenuClosed = true
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
+        moreButtonOptions.forEach { (button) in
+            button.alpha = 0
+        }
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -84,6 +88,33 @@ class PostDetailCell: UITableViewCell {
                 }
             }
         }
+    }
+    
+    @IBAction func moreOptionsButton(_ sender: UIButton) {
+        if self.optionsMenuClosed {
+            moreButtonOptions.forEach { (button) in
+                UIView.animate(withDuration: 0.50, animations: {
+                    button.alpha = 1
+                })
+            
+            }
+            self.optionsMenuClosed = false
+        } else {
+            moreButtonOptions.forEach { (button) in
+                UIView.animate(withDuration: 0.50, animations: {
+                    button.alpha = 0
+                    
+                })
+                
+            }
+            self.optionsMenuClosed = true
+        }
+    }
+    
+    @IBAction func editPost(_ sender: Any) {
+    }
+    
+    @IBAction func deletePost(_ sender: Any) {
     }
 
 }
